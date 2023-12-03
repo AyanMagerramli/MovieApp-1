@@ -15,4 +15,8 @@ class HomePageController: UIViewController {
         super.viewDidLoad()
         viewModel.configureViewModel()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print(viewModel.movieItems?.results?[0].originalLanguage ?? "boshdu")
+    }
 }

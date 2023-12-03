@@ -11,7 +11,7 @@ import UIKit
 class HomePageViewModel {
     
     var movieItems: MovieModel?
-    var success: (() -> Void)?
+    var success: ((MovieModel?) -> Void)?
     var error: ((String) -> Void)?
     
     func getMovieItems() {
@@ -20,15 +20,15 @@ class HomePageViewModel {
                 self.error?(errorMessage.localizedDescription)
             } else if let data {
                 self.movieItems = data
-                self.success?()
+                self.success?(data)
             }
         }
     }
     
     func configureViewModel() {
-        success = { [weak self] in
-            print(self?.movieItems ?? "bosh")
-        }
+//        success = { [weak self] in
+//            print(self?.movieItems ?? "bosh")
+//        }
         error = { error in
             print(error)
         }

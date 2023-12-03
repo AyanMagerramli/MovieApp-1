@@ -18,7 +18,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Jj-JC-U3X"/>
+                    <navigationItem key="navigationItem" id="2Jj-JC-U3X">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="y4F-F5-Agh"/>
+                        <barButtonItem key="rightBarButtonItem" image="search" id="vkE-Ru-Z74"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,6 +103,8 @@
     <resources>
         <image name="favourite" width="24" height="24"/>
         <image name="home" width="24" height="24"/>
+        <image name="menu" width="24" height="24"/>
+        <image name="search" width="24" height="24"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
