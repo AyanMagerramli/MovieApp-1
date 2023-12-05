@@ -14,11 +14,3 @@ enum Endpoints: String {
     case upcoming = "movie/upcoming"
 }
 
-//enum MovieCategory: String, CaseIterable {
-//    case nowPlaying = "Now Playing"
-//    case popular = "Populars"
-//    case topRated = "Top Rated"
-//    case upcoming = "Upcoming"
-//}
-
-

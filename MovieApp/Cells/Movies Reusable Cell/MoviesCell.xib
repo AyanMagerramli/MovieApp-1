@@ -11,20 +11,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MoviesCell" customModule="MovieApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="171" height="276"/>
+            <rect key="frame" x="0.0" y="0.0" width="167" height="266"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="171" height="276"/>
+                <rect key="frame" x="0.0" y="0.0" width="167" height="266"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="freeGuy" translatesAutoresizingMaskIntoConstraints="NO" id="E5c-sg-9sQ">
-                        <rect key="frame" x="4" y="0.0" width="167" height="240"/>
+                        <rect key="frame" x="0.0" y="0.0" width="167" height="240"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="240" id="fkl-ul-RRF"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-z3-pwh">
-                        <rect key="frame" x="4" y="248" width="167" height="18"/>
+                        <rect key="frame" x="0.0" y="248" width="167" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" name="font color"/>
                         <nil key="highlightedColor"/>
@@ -33,12 +33,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="0Ac-z3-pwh" firstAttribute="top" secondItem="E5c-sg-9sQ" secondAttribute="bottom" constant="8" id="RhP-HG-4LX"/>
-                <constraint firstItem="E5c-sg-9sQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="Ugo-db-vaP"/>
+                <constraint firstItem="0Ac-z3-pwh" firstAttribute="top" secondItem="E5c-sg-9sQ" secondAttribute="bottom" constant="8" id="M7b-58-fxV"/>
+                <constraint firstItem="E5c-sg-9sQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ugo-db-vaP"/>
                 <constraint firstItem="E5c-sg-9sQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a4Q-PB-4wX"/>
                 <constraint firstAttribute="trailing" secondItem="E5c-sg-9sQ" secondAttribute="trailing" id="hFL-76-2yj"/>
-                <constraint firstItem="0Ac-z3-pwh" firstAttribute="trailing" secondItem="E5c-sg-9sQ" secondAttribute="trailing" id="ut4-7b-2kp"/>
-                <constraint firstItem="0Ac-z3-pwh" firstAttribute="leading" secondItem="E5c-sg-9sQ" secondAttribute="leading" id="wL1-XK-3eW"/>
+                <constraint firstItem="0Ac-z3-pwh" firstAttribute="trailing" secondItem="E5c-sg-9sQ" secondAttribute="trailing" id="ofq-5i-Ats"/>
+                <constraint firstItem="0Ac-z3-pwh" firstAttribute="leading" secondItem="E5c-sg-9sQ" secondAttribute="leading" id="v0l-EH-EJp"/>
             </constraints>
             <connections>
                 <outlet property="movieImage" destination="E5c-sg-9sQ" id="rZ7-ae-vhT"/>

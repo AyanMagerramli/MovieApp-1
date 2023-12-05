@@ -12,7 +12,6 @@ class CategoryCell: UICollectionViewCell {
     @IBOutlet weak var moviesCollection: UICollectionView!
     @IBOutlet weak var movieCategoryTitle: UILabel!
     
-    var movieList = [MovieModel]()
     let viewModel = HomePageViewModel()
     
     func configCell() {
@@ -20,12 +19,12 @@ class CategoryCell: UICollectionViewCell {
 }
     override func awakeFromNib() {
         super.awakeFromNib()
-        viewModel.getMovieItems()
+        viewModel.getMoviePopularItems()
+//        viewModel.getAllMovieItems()
         viewModel.success = {
             self.moviesCollection.reloadData()
         }
     }
- 
 }
 
 extension CategoryCell: UICollectionViewDelegate, UICollectionViewDataSource {

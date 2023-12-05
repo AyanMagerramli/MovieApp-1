@@ -14,7 +14,7 @@ class HomePageViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    func getMovieItems() {
+    func getMoviePopularItems() {
         NetworkManager.request(model: MovieModel.self, endpoint: .popular) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage.localizedDescription)
@@ -23,6 +23,33 @@ class HomePageViewModel {
                 self.success?()
             }
         }
+    }
+    
+    func getMovieTopratedItems() {
+        NetworkManager.request(model: MovieModel.self, endpoint: .topRated) { data, errorMessage in
+            if let errorMessage {
+                self.error?(errorMessage.localizedDescription)
+            } else if let data {
+                self.movieItems = data
+                self.success?()
+            }
+        }
+    }
+    func getMovieUpcomingItems() {
+        NetworkManager.request(model: MovieModel.self, endpoint: .upcoming) { data, errorMessage in
+            if let errorMessage {
+                self.error?(errorMessage.localizedDescription)
+            } else if let data {
+                self.movieItems = data
+                self.success?()
+            }
+        }
+    }
+    
+    func getAllMovieItems() {
+        getMoviePopularItems()
+        getMovieTopratedItems()
+        getMovieUpcomingItems()
     }
     
     func configureViewModel() {

@@ -15,7 +15,8 @@ class HomePageController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getMovieItems()
+        viewModel.getMoviePopularItems()
+//        viewModel.getAllMovieItems()
         viewModel.success = {
             self.movieCategoryCollection.reloadData()
         }
@@ -29,7 +30,7 @@ class HomePageController: UIViewController {
 extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
