@@ -27,7 +27,6 @@ class NetworkManager {
                    encoding: encoding,
                    headers: headers).responseDecodable(of: T.self) { response in
             switch (response.result) {
-                
             case .success(let data):
                 completion(data, nil)
             case .failure(let error):
