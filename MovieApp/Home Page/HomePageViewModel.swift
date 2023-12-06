@@ -14,6 +14,17 @@ class HomePageViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
+    func getMovieNowPlayingItems() {
+        NetworkManager.request(model: MovieModel.self, endpoint: .nowPlaying) { data, errorMessage in
+            if let errorMessage {
+                self.error?(errorMessage.localizedDescription)
+            } else if let data {
+                self.movieItems = data
+                self.success?()
+            }
+        }
+    }
+    
     func getMoviePopularItems() {
         NetworkManager.request(model: MovieModel.self, endpoint: .popular) { data, errorMessage in
             if let errorMessage {
@@ -45,17 +56,26 @@ class HomePageViewModel {
             }
         }
     }
+    //
     
-    func getAllMovieItems() {
-        getMoviePopularItems()
-        getMovieTopratedItems()
-        getMovieUpcomingItems()
-    }
+    //    func getAllMovieItems() {
+    //
+    //        for i in Endpoints.allCases {
+    //            NetworkManager.request(model: [MovieModel].self, endpoint: i) { data, errorMessage in
+    //                if let errorMessage {
+    //                    self.error?(errorMessage.localizedDescription)
+    //                } else if let data {
+    //                    self.movieItems?.append(contentsOf: data)
+    //                    self.success?()
+    //                }
+    //            }
+    //        }
+    //    }
     
     func configureViewModel() {
-//        success = { [weak self] in
-//            print(self?.movieItems ?? "bosh")
-//        }
+        //        success = { [weak self] in
+        //            print(self?.movieItems ?? "bosh")
+        //        }
         error = { error in
             print(error)
         }
