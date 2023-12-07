@@ -8,35 +8,43 @@
 import UIKit
 
 class HomePageController: UIViewController {
-    
+        
     @IBOutlet weak var movieCategoryCollection: UICollectionView!
     
     let viewModel = HomePageViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.getMovieTopratedItems()
+        configureViewModel()
+        movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
+    }
+    
+    func configureViewModel() {
+        viewModel.error = { errorMessage in
+            print(errorMessage)
+        }
         viewModel.success = {
             self.movieCategoryCollection.reloadData()
-            //            print(self.viewModel.movieItems ?? "bosh")
         }
+        viewModel.getItems()
     }
     
 }
 
-extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource {
+extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        viewModel.movieItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-        
-        cell.movieCategoryTitle.text = "Top Rated"
-        cell.configCell()
-        cell.moviesCollection.reloadData()
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
+        let item = viewModel.movieItems[indexPath.item]
+        cell.configure(title: item.title, movies: item.movies)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .init(width: collectionView.frame.width, height: 288)
     }
 }

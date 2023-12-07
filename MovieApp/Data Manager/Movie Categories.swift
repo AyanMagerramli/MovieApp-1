@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum MovieCategory: String, CaseIterable {
+enum MovieCategories: String, CaseIterable {
     case nowPlaying = "Now Playing"
     case popular = "Popular"
     case topRated = "Top Rated"
