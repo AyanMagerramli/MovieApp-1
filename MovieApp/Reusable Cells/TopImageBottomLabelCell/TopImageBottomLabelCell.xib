@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="261" height="349"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="freeGuy" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-P8-fYp">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="freeGuy" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-P8-fYp">
                         <rect key="frame" x="0.0" y="0.0" width="261" height="321.66666666666669"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-Gb-W26">

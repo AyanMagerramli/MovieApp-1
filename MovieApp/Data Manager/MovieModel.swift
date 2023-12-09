@@ -26,7 +26,8 @@ struct Dates: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result: Codable, TopImageBottomLabelProtocol {
+
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?
@@ -39,6 +40,14 @@ struct Result: Codable {
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
+    
+    var titleText: String {
+        title ?? ""
+    }
+    
+    var imagePath: String {
+        backdropPath ?? ""
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult

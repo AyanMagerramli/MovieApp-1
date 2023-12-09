@@ -17,8 +17,13 @@ class HomePageController: UIViewController {
         super.viewDidLoad()
         configureViewModel()
         movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
+        title = "Home"
     }
     
+    @IBAction func searchButton(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "PeopleController") as! PeopleController
+        navigationController?.show(controller, sender: nil)
+    }
     func configureViewModel() {
         viewModel.error = { errorMessage in
             print(errorMessage)

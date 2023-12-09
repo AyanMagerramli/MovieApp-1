@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol TopImageBottomLabelProtocol {
+    var titleText: String {get}
+    var imagePath: String {get}
+}
+
 class TopImageBottomLabelCell: UICollectionViewCell {
 
     @IBOutlet weak var movieTitleLabel: UILabel!
@@ -16,8 +21,10 @@ class TopImageBottomLabelCell: UICollectionViewCell {
         super.awakeFromNib()
         movieImage.layer.cornerRadius = 16
     }
-    func configure(data: Result) {
-        movieTitleLabel.text = data.title
-        movieImage.showImage(imageURL: data.posterPath)
+    func configure(data: TopImageBottomLabelProtocol) {
+        movieTitleLabel.text = data.titleText
+        movieImage.showImage(imageURL: data.imagePath)
     }
+    
+    
 }
