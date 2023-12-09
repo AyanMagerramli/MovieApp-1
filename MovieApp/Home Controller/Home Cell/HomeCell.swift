@@ -12,14 +12,14 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var movieCategoryLabel: UILabel!
     @IBOutlet weak var moviesCollection: UICollectionView!
     
-    var movies = [Result]()
+    var movies = [MovieResult]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         moviesCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil), forCellWithReuseIdentifier: "TopImageBottomLabelCell")
     }
     
-    func configure(title: String, movies: [Result]) {
+    func configure(title: String, movies: [MovieResult]) {
         movieCategoryLabel.text = title
         self.movies = movies
         moviesCollection.reloadData()

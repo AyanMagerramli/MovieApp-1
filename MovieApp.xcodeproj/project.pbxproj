@@ -35,6 +35,10 @@
 		90CF69762B21B7D700D594CD /* TopImageBottomLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF69742B21B7D700D594CD /* TopImageBottomLabelCell.swift */; };
 		90CF69772B21B7D700D594CD /* TopImageBottomLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90CF69752B21B7D700D594CD /* TopImageBottomLabelCell.xib */; };
 		90CF69792B21CAB900D594CD /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CF69782B21CAB900D594CD /* NetworkHelper.swift */; };
+		90F27F8E2B245845008DE613 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F27F8D2B245845008DE613 /* SearchController.swift */; };
+		90F27F902B245854008DE613 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F27F8F2B245854008DE613 /* SearchViewModel.swift */; };
+		90F27F932B24588D008DE613 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F27F912B24588D008DE613 /* MovieCell.swift */; };
+		90F27F942B24588D008DE613 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F27F922B24588D008DE613 /* MovieCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +69,10 @@
 		90CF69742B21B7D700D594CD /* TopImageBottomLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopImageBottomLabelCell.swift; sourceTree = "<group>"; };
 		90CF69752B21B7D700D594CD /* TopImageBottomLabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopImageBottomLabelCell.xib; sourceTree = "<group>"; };
 		90CF69782B21CAB900D594CD /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		90F27F8D2B245845008DE613 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		90F27F8F2B245854008DE613 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		90F27F912B24588D008DE613 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		90F27F922B24588D008DE613 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +117,14 @@
 		902A898F2B1CA7D5005D266A /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				902A89A52B1CA874005D266A /* Home Page */,
-				90B478572B1DC2C700F4C21E /* Reusable Cells */,
+				902A89A52B1CA874005D266A /* Home Controller */,
 				90577A942B2376AC001BA06A /* People */,
+				90F27F8C2B245829008DE613 /* Search Controller */,
 				902A89A42B1CA86D005D266A /* Data Manager */,
 				902A89A62B1CA87A005D266A /* Network Manager */,
 				90C7DCB62B1DBA8700316E7E /* Fonts */,
 				9098A8372B1F01B9002F7101 /* Extensions */,
+				90B478572B1DC2C700F4C21E /* Reusable Cells */,
 				902A89902B1CA7D5005D266A /* AppDelegate.swift */,
 				902A89922B1CA7D5005D266A /* SceneDelegate.swift */,
 				902A89962B1CA7D5005D266A /* Main.storyboard */,
@@ -138,14 +147,14 @@
 			path = "Data Manager";
 			sourceTree = "<group>";
 		};
-		902A89A52B1CA874005D266A /* Home Page */ = {
+		902A89A52B1CA874005D266A /* Home Controller */ = {
 			isa = PBXGroup;
 			children = (
 				9008465B2B21AC9D00100DD8 /* Home Cell */,
 				902A89B22B1CAE6C005D266A /* HomePageController.swift */,
 				902A89B02B1CAE51005D266A /* HomePageViewModel.swift */,
 			);
-			path = "Home Page";
+			path = "Home Controller";
 			sourceTree = "<group>";
 		};
 		902A89A62B1CA87A005D266A /* Network Manager */ = {
@@ -177,6 +186,7 @@
 		90B478572B1DC2C700F4C21E /* Reusable Cells */ = {
 			isa = PBXGroup;
 			children = (
+				90F27F952B24589D008DE613 /* SearchMovie Cell */,
 				90CF69732B21B7C000D594CD /* TopImageBottomLabelCell */,
 			);
 			path = "Reusable Cells";
@@ -200,6 +210,24 @@
 				90CF69752B21B7D700D594CD /* TopImageBottomLabelCell.xib */,
 			);
 			path = TopImageBottomLabelCell;
+			sourceTree = "<group>";
+		};
+		90F27F8C2B245829008DE613 /* Search Controller */ = {
+			isa = PBXGroup;
+			children = (
+				90F27F8D2B245845008DE613 /* SearchController.swift */,
+				90F27F8F2B245854008DE613 /* SearchViewModel.swift */,
+			);
+			path = "Search Controller";
+			sourceTree = "<group>";
+		};
+		90F27F952B24589D008DE613 /* SearchMovie Cell */ = {
+			isa = PBXGroup;
+			children = (
+				90F27F922B24588D008DE613 /* MovieCell.xib */,
+				90F27F912B24588D008DE613 /* MovieCell.swift */,
+			);
+			path = "SearchMovie Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +301,7 @@
 				90CF69722B21B08D00D594CD /* HomeCell.xib in Resources */,
 				9098A8452B1F0EDE002F7101 /* Poppins-Bold.ttf in Resources */,
 				902A899A2B1CA7D6005D266A /* Assets.xcassets in Resources */,
+				90F27F942B24588D008DE613 /* MovieCell.xib in Resources */,
 				9098A8442B1F0EDE002F7101 /* Poppins-Regular.ttf in Resources */,
 				9098A8462B1F0EDE002F7101 /* Poppins-SemiBold.ttf in Resources */,
 				90CF69772B21B7D700D594CD /* TopImageBottomLabelCell.xib in Resources */,
@@ -294,12 +323,15 @@
 				902A89AC2B1CAA1D005D266A /* NetworkManager.swift in Sources */,
 				9098A8392B1F01CE002F7101 /* ImageExtension.swift in Sources */,
 				902A89912B1CA7D5005D266A /* AppDelegate.swift in Sources */,
+				90F27F902B245854008DE613 /* SearchViewModel.swift in Sources */,
 				90CF69712B21B08D00D594CD /* HomeCell.swift in Sources */,
 				902A89B72B1CD48E005D266A /* Endpoints.swift in Sources */,
 				9085C1B22B1F220500FF7CD6 /* Movie Categories.swift in Sources */,
 				902A89932B1CA7D5005D266A /* SceneDelegate.swift in Sources */,
+				90F27F8E2B245845008DE613 /* SearchController.swift in Sources */,
 				90577A9C2B23790D001BA06A /* PeopleController.swift in Sources */,
 				902A89B12B1CAE51005D266A /* HomePageViewModel.swift in Sources */,
+				90F27F932B24588D008DE613 /* MovieCell.swift in Sources */,
 				90577A9A2B2376E5001BA06A /* People.swift in Sources */,
 				902A89B32B1CAE6C005D266A /* HomePageController.swift in Sources */,
 				90577A982B2376D6001BA06A /* PeopleViewModel.swift in Sources */,

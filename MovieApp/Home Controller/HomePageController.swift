@@ -21,7 +21,7 @@ class HomePageController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "PeopleController") as! PeopleController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "SearchController") as! SearchController
         navigationController?.show(controller, sender: nil)
     }
     func configureViewModel() {

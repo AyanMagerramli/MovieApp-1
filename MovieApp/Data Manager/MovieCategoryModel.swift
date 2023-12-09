@@ -9,5 +9,5 @@ import Foundation
 
 struct MovieCategoryModel {
     let title: String
-    let movies: [Result]
+    let movies: [MovieResult]
 }
