@@ -8,14 +8,17 @@
 import Foundation
 
 class PeopleViewModel {
+    
     var peopleItems = [PeopleResult]()
+    private let manager = PeopleManager()
+    
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    func getPeopleItems() {
-        NetworkManager.request(model: People.self, endpoint: Endpoints.popularPerson.rawValue) { data, errorMessage in
+    func getPeopleItems(endpoint: Endpoints) {
+        manager.getPeopleList(endpoint: .popularPerson) { data, errorMessage in
             if let errorMessage {
-                self.error?(errorMessage.localizedDescription)
+                self.error?(errorMessage)
             } else if let data {
                 self.peopleItems = data.results ?? []
                 self.success?()

@@ -26,7 +26,7 @@ class PeopleController: UIViewController {
         viewModel.success = {
             self.peopleCollection.reloadData()
         }
-        viewModel.getPeopleItems()
+        viewModel.getPeopleItems(endpoint: .popularPerson)
     }
     
 }
