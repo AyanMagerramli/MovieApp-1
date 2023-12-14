@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol HomeCellDelegate {
+    func didSelectMovie(at index: Int)
+}
+
 class HomeCell: UICollectionViewCell {
 
     @IBOutlet weak var movieCategoryLabel: UILabel!
     @IBOutlet weak var moviesCollection: UICollectionView!
     
     var movies = [MovieResult]()
+    var delegate: HomeCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,11 +43,11 @@ extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("test123")
-        let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: <#T##String#>)
+        delegate?.didSelectMovie(at: movies[indexPath.item].id ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: 167, height: collectionView.frame.height)
     }
 }
+

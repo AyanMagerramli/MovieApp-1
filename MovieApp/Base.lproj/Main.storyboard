@@ -68,6 +68,21 @@
             </objects>
             <point key="canvasLocation" x="3884.7328244274809" y="-416.19718309859155"/>
         </scene>
+        <!--Movie Info Controller-->
+        <scene sceneID="NOu-tq-8Fj">
+            <objects>
+                <viewController storyboardIdentifier="MovieInfoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f7z-Xr-3gr" customClass="MovieInfoController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u3D-E1-sKL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AMT-is-uVw"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lv7-zc-wpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4647" y="-169"/>
+        </scene>
         <!--Search Controller-->
         <scene sceneID="rsk-Po-BRi">
             <objects>
@@ -128,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWZ-B3-F5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4669" y="-801"/>
+            <point key="canvasLocation" x="4647" y="-873"/>
         </scene>
         <!--People Controller-->
         <scene sceneID="uzX-aP-Yhn">
@@ -242,6 +257,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
