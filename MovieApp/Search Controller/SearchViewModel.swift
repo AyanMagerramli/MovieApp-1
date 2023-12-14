@@ -31,4 +31,8 @@ class SearchViewModel {
             }
         }
     }
+    
+    func clearItems() {
+        searchedMovies.removeAll()
+    }
 }

@@ -24,7 +24,7 @@ class SearchController: UIViewController {
             viewmodel.getSearch(movieKey: text)
             movieCollection.reloadData()
         } else  {
-            viewmodel.searchedMovies.removeAll()
+            viewmodel.clearItems()
             movieCollection.reloadData()
         }
     }
