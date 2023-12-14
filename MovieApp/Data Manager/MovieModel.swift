@@ -27,7 +27,7 @@ struct Dates: Codable {
 
 // MARK: - Result
 struct MovieResult: Codable, TopImageBottomLabelProtocol {
-
+    
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?
