@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PeopleManager {
+class PeopleManager: PeopleListUseCase {
     func getPeopleList(endpoint: Endpoints, completion: @escaping ((People?, String?) -> Void)) {
         NetworkManager.request(model: People.self, endpoint: endpoint.rawValue) { data, errorMessage in
             if let errorMessage {

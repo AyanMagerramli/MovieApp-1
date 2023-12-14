@@ -14,9 +14,8 @@ class SearchViewModel {
     
     var success: (() -> Void)?
     var error: ((String) -> Void)?
-    
+
     func getSearch(movieKey: String) {
-        
         manager.getSearchItems(endpoint: .search, movieKey: movieKey) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)

@@ -7,10 +7,9 @@
 
 import Foundation
 
-class SearchManager {
+class SearchManager:SearchListUseCase {
     
     func getSearchItems(endpoint: Endpoints, movieKey: String, completion: @escaping ((MovieModel?, String?) -> Void)) {
-        
         let param: [String: Any] = ["query": movieKey]
         
         NetworkManager.request(

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HomeManager {
+class HomeManager: MovieListUseCase {
     func getMovieList(endpoint: Endpoints, completion: @escaping ((MovieModel?, String?) -> Void)) {
         NetworkManager.request(model: MovieModel.self, endpoint: endpoint.rawValue) { data, errorMessage in
             if let errorMessage {
