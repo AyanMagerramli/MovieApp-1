@@ -35,9 +35,8 @@ class MovieInfoViewModel {
     var error: ((String) -> Void)?
     
     private let manager = MovieInfoManager()
-    
     func getMovieInfoItems(movieID: Int?) {
-        manager.getMovieInfo(endpoint: .movieInfo) { data, errorMessage in
+        manager.getMovieInfo(endpoint: .movieInfo, movieID: movieID) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
             } else if let data {

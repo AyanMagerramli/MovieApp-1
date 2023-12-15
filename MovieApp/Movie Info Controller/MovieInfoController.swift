@@ -17,11 +17,9 @@ class MovieInfoController: UIViewController {
         super.viewDidLoad()
         configureXibs()
         configureViewModel()
-        print(viewModel.movieItems)
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(viewModel.movieItems)
     }
     
     func configureViewModel() {
@@ -30,8 +28,9 @@ class MovieInfoController: UIViewController {
         }
         viewModel.success = {
             self.movieInfoCollection.reloadData()
+            print(self.viewModel.movieItems)
         }
-        viewModel.getMovieInfoItems(movieID: 3)
+        viewModel.getMovieInfoItems(movieID: 324857)
     }
 }
 
@@ -48,27 +47,35 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             
         case .poster:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTrailerCell", for: indexPath) as! MovieTrailerCell
-            //            cell.movieImage.image = UIImage(named: "spiderman")
+            if let posterPath = item.data as? String {
+                cell.movieImage.showImage(imageURL: posterPath)
+                    }
             return cell
+            
         case .title:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieNameCell", for: indexPath) as! MovieNameCell
-            //            cell.movieTitleLabel.text = "Spider-Man: No Way Home (2021)"
+            if let title = item.data as? String {
+                cell.movieTitleLabel.text = title
+            }
             return cell
+            
         case .info:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDetailsCell", for: indexPath) as! MovieDetailsCell
             return cell
+            
         case .description:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDescriptionCell", for: indexPath) as! MovieDescriptionCell
             return cell
+            
         case .cast:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
             return cell
+            
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = viewModel.movieItems[indexPath.item]
-               
                switch item.type {
                case .poster:
                    // Calculate height for poster cell based on your requirements
