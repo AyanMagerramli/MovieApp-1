@@ -84,7 +84,7 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
                    return CGSize(width: collectionView.frame.width - 32, height: 144) // Adjust as needed
                case .cast:
                    // Calculate height for cast cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 118) // Adjust as needed
+                   return CGSize(width: collectionView.frame.width - 32, height: 150) // Adjust as needed
            }
     }
 }

@@ -13,11 +13,24 @@ class MovieDetailsCell: UICollectionViewCell {
     @IBOutlet weak var movieLength: UILabel!
     @IBOutlet weak var movieLanguage: UILabel!
     @IBOutlet weak var movieRating: UILabel!
+    
     @IBOutlet weak var genreCollection: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        genreCollection.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
     }
 
+}
+
+extension MovieDetailsCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as! GenresCell
+        cell.genreLabel.text = "Action"
+        return cell
+    }
 }
