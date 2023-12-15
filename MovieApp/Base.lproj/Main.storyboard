@@ -79,7 +79,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-SJ-3z4">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ApB-po-e8a">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ApB-po-e8a">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -95,10 +95,9 @@
                         <viewLayoutGuide key="safeArea" id="AMT-is-uVw"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                         <constraints>
+                            <constraint firstItem="3ob-SJ-3z4" firstAttribute="top" secondItem="u3D-E1-sKL" secondAttribute="top" id="9Z6-pM-jcQ"/>
                             <constraint firstItem="AMT-is-uVw" firstAttribute="bottom" secondItem="3ob-SJ-3z4" secondAttribute="bottom" id="Ksz-yV-MRI"/>
                             <constraint firstItem="3ob-SJ-3z4" firstAttribute="leading" secondItem="AMT-is-uVw" secondAttribute="leading" id="SEB-rQ-oeB"/>
-                            <constraint firstItem="3ob-SJ-3z4" firstAttribute="top" secondItem="AMT-is-uVw" secondAttribute="top" constant="-59" id="Y3a-gi-4SV"/>
-                            <constraint firstItem="3ob-SJ-3z4" firstAttribute="top" secondItem="AMT-is-uVw" secondAttribute="top" constant="-59" id="e6F-31-uuC"/>
                             <constraint firstItem="AMT-is-uVw" firstAttribute="trailing" secondItem="3ob-SJ-3z4" secondAttribute="trailing" id="kge-Qc-rKr"/>
                         </constraints>
                     </view>

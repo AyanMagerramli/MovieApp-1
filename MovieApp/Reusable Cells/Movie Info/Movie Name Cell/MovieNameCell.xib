@@ -10,24 +10,22 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieNameCell" customModule="MovieApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiderman: No Way Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-7x-4hM">
-                        <rect key="frame" x="6.3333333333333286" y="9" width="239.66666666666669" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spiderman: No Way Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-7x-4hM">
+                        <rect key="frame" x="0.0" y="9" width="319" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-Vb-yK8">
-                        <rect key="frame" x="290" y="0.0" width="40" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="40" id="Ttj-Av-Inq"/>
-                            <constraint firstAttribute="height" constant="40" id="fVn-1C-UzR"/>
-                        </constraints>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-Vb-yK8">
+                        <rect key="frame" x="321" y="0.0" width="40" height="40"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
                         <connections>
@@ -37,20 +35,12 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="DfZ-Vb-yK8" secondAttribute="trailing" id="3vN-Pe-ArN"/>
-                <constraint firstItem="tMX-7x-4hM" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.726263" id="LUM-E8-Cal"/>
-                <constraint firstItem="tMX-7x-4hM" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.48" id="QhF-R5-zWl"/>
-                <constraint firstAttribute="bottom" secondItem="DfZ-Vb-yK8" secondAttribute="bottom" constant="10" id="jdp-i1-WRm"/>
-                <constraint firstItem="DfZ-Vb-yK8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qxp-VL-85m"/>
-                <constraint firstItem="tMX-7x-4hM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="unA-a2-a2k"/>
-                <constraint firstItem="DfZ-Vb-yK8" firstAttribute="leading" secondItem="tMX-7x-4hM" secondAttribute="trailing" constant="44" id="v5o-U1-9VT"/>
-            </constraints>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="330" height="50"/>
             <connections>
                 <outlet property="movieTitleLabel" destination="tMX-7x-4hM" id="fUq-ZE-17Y"/>
             </connections>
-            <point key="canvasLocation" x="117.55725190839694" y="19.718309859154932"/>
+            <point key="canvasLocation" x="116.79389312977099" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
     <resources>
