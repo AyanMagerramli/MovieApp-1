@@ -15,7 +15,7 @@ class PeopleViewModel {
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
-    func getPeopleItems(endpoint: Endpoints) {
+    func getPeopleItems(endpoint: PeopleEndpoint) {
         manager.getPeopleList(endpoint: .popularPerson) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)

@@ -23,7 +23,7 @@ class HomePageViewModel {
         getMovieItems(title: "Upcoming", endpoint: .upcoming)
     }
     
-    func getMovieItems(title: String, endpoint: Endpoints) {
+    func getMovieItems(title: String, endpoint: HomeEndpoint) {
         manager.getMovieList(endpoint: endpoint) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)

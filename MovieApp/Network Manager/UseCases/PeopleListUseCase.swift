@@ -8,5 +8,5 @@
 import Foundation
 
 protocol PeopleListUseCase {
-    func getPeopleList(endpoint: Endpoints, completion: @escaping ((People?, String?) -> Void))
+    func getPeopleList(endpoint: PeopleEndpoint, completion: @escaping ((People?, String?) -> Void))
 }

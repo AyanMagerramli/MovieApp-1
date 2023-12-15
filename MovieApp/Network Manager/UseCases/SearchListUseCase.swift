@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SearchListUseCase {
-    func getSearchItems(endpoint: Endpoints, movieKey: String, completion: @escaping ((MovieModel?, String?) -> Void))
+    func getSearchItems(endpoint: SearchEndpoint, movieKey: String, completion: @escaping ((MovieModel?, String?) -> Void))
 }

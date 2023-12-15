@@ -39,8 +39,6 @@ extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
-//        let item = viewModel.movieItems[indexPath.item]
-//        cell.configure(title: item.title, movies: item.movies)
         cell.configure(data: viewModel.peopleItems[indexPath.item])
         return cell
     }
@@ -48,5 +46,4 @@ extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width/2 - 10, height: 180)
     }
-    
 }
