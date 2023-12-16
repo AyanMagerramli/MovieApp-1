@@ -206,6 +206,7 @@
 				902A89B02B1CAE51005D266A /* HomePageViewModel.swift */,
 				90E3B4D72B2AEDF00032BB06 /* HomeManager.swift */,
 				900C916C2B2CAD8E00CAA4C4 /* HomeEndpoint.swift */,
+				90E3B4E02B2AFC3B0032BB06 /* MovieListUseCase.swift */,
 			);
 			path = "Home Controller";
 			sourceTree = "<group>";
@@ -214,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				90E3B4D62B2AED980032BB06 /* Core */,
-				90E3B4DF2B2AFC2C0032BB06 /* UseCases */,
 			);
 			path = "Network Manager";
 			sourceTree = "<group>";
@@ -226,6 +226,7 @@
 				90577A972B2376D6001BA06A /* PeopleViewModel.swift */,
 				90E3B4D92B2AF1670032BB06 /* PeopleManager.swift */,
 				900C91702B2CAE1800CAA4C4 /* PeopleEndpoint.swift */,
+				90E3B4E22B2AFC520032BB06 /* PeopleListUseCase.swift */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -294,16 +295,6 @@
 				90CF69782B21CAB900D594CD /* NetworkHelper.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		90E3B4DF2B2AFC2C0032BB06 /* UseCases */ = {
-			isa = PBXGroup;
-			children = (
-				90E3B4E02B2AFC3B0032BB06 /* MovieListUseCase.swift */,
-				90E3B4E22B2AFC520032BB06 /* PeopleListUseCase.swift */,
-				90E3B4E42B2AFC6D0032BB06 /* SearchListUseCase.swift */,
-			);
-			path = UseCases;
 			sourceTree = "<group>";
 		};
 		90E3B4E62B2B00180032BB06 /* Movie Info Controller */ = {
@@ -383,6 +374,7 @@
 				90F27F8F2B245854008DE613 /* SearchViewModel.swift */,
 				90E3B4DB2B2AF34E0032BB06 /* SearchManager.swift */,
 				900C916A2B2CAD8300CAA4C4 /* SearchEndpoint.swift */,
+				90E3B4E42B2AFC6D0032BB06 /* SearchListUseCase.swift */,
 			);
 			path = "Search Controller";
 			sourceTree = "<group>";

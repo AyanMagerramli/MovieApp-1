@@ -12,23 +12,39 @@ class PeopleController: UIViewController {
     @IBOutlet weak var peopleCollection: UICollectionView!
     let viewModel = PeopleViewModel()
     
+    let refreshController = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        peopleCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil),forCellWithReuseIdentifier: "TopImageBottomLabelCell")
+        configureUI()
         configureViewModel()
-        title = "People"
     }
     
+    func configureUI() {
+        title = "People"
+        refreshController.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        peopleCollection.refreshControl = refreshController
+        peopleCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil),forCellWithReuseIdentifier: "TopImageBottomLabelCell")
+        
+    }
+    @objc func pullToRefresh() {
+        viewModel.reset()
+        peopleCollection.reloadData()
+        viewModel.getPeopleItems()
+    }
+
     func configureViewModel() {
         viewModel.error = { errorMessage in
             print(errorMessage)
         }
         viewModel.success = {
             self.peopleCollection.reloadData()
+            self.refreshController.endRefreshing()
+
         }
-        viewModel.getPeopleItems(endpoint: .popularPerson)
+        viewModel.getPeopleItems()
     }
-    
+
 }
 
 extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -44,6 +60,10 @@ extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: collectionView.frame.width/2 - 10, height: 180)
+        .init(width: collectionView.frame.width/2 - 10, height: 280)
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.pagination(index: indexPath.item)
     }
 }
+

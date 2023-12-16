@@ -8,8 +8,9 @@
 import Foundation
 
 class PeopleManager: PeopleListUseCase {
-    func getPeopleList(endpoint: PeopleEndpoint, completion: @escaping ((People?, String?) -> Void)) {
-        NetworkManager.request(model: People.self, endpoint: endpoint.rawValue) { data, errorMessage in
+    func getPeopleList(pageNumber: Int, completion: @escaping ((People?, String?) -> Void)) {
+        let url = PeopleEndpoint.popularPerson.rawValue + "?page=\(pageNumber)"
+        NetworkManager.request(model: People.self, endpoint: url) { data, errorMessage in
             if let errorMessage {
                 completion(nil, errorMessage.localizedDescription)
             } else if let data {
