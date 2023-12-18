@@ -42,6 +42,13 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         cell.movieImage.showImage(imageURL: viewmodel.searchedMovies[indexPath.item].backdropPath)
         cell.movieRatingLabel.text = "⭐ \((viewmodel.searchedMovies[indexPath.item].voteAverage?.rounded() ?? 0)) / 10 IMDB"
         cell.movieDescriptionLabel.text = viewmodel.searchedMovies[indexPath.item].overview
+        
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
+        controller.selectedID = viewmodel.searchedMovies[indexPath.item].id
+        print(indexPath.item)
+        navigationController?.show(controller, sender: nil)
     }
 }

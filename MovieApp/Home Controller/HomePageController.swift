@@ -12,7 +12,7 @@ class HomePageController: UIViewController {
     @IBOutlet weak var movieCategoryCollection: UICollectionView!
     
     let viewModel = HomePageViewModel()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
@@ -36,7 +36,7 @@ class HomePageController: UIViewController {
     
 }
 
-extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout, HomeCellDelegate {
+extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movieItems.count
@@ -50,12 +50,17 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
         return cell
     }
     
-    func didSelectMovie(at index: Int) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        navigationController?.show(controller, sender: nil)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 288)
     }
+}
+
+extension HomePageController: MovieSelectCellDelegate {
+    func didSelectMovie(at index: Int) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
+        controller.selectedID = index
+        print ("Ali Jafarov \(index)" )
+        navigationController?.show(controller, sender: nil)
+    }
+    
 }

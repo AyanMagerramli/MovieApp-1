@@ -8,16 +8,16 @@
 import Foundation
 
 enum MovieDetailItemType {
-    case poster
-    case title
-    case info
-    case description
-    case cast
+    case poster(String?)
+    case title(String?)
+    case info(MovieInfo)
+    case description(String?)
+    case cast(PeopleResult)
 }
 
 struct MovieDetailModel {
     let type: MovieDetailItemType
-    let data: Any?
+//    let data: Any?
 }
 
 struct MovieInfo {
@@ -30,7 +30,6 @@ struct MovieInfo {
 class MovieInfoViewModel {
     
     var movieItems = [MovieDetailModel]()
-    
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     
@@ -40,17 +39,16 @@ class MovieInfoViewModel {
             if let errorMessage {
                 self.error?(errorMessage)
             } else if let data {
-                self.movieItems.append(.init(type: .poster, data: data.posterPath))
-                self.movieItems.append(.init(type: .title, data: data.title))
-                self.movieItems.append(.init(type: .info, data: MovieInfo(rating: "\(data.voteAverage ?? 0) / 10 IMDB",
-                                                                          genres: data.genres ?? [],
-                                                                          length: "\(data.runtime ?? 0)",
-                                                                          language: data.spokenLanguages!)))
-                self.movieItems.append(.init(type: .description, data: data.overview))
-                self.movieItems.append(.init(type: .cast, data: data.adult))
+                self.movieItems.append(.init(type: .poster(data.posterPath)))
+                self.movieItems.append(.init(type: .title(data.title)))
+                self.movieItems.append(.init(type: .info(.init(rating: "\(data.voteAverage ?? 0.0)", 
+                                                               genres: data.genres ?? [], length: "\(data.runtime ?? 0)",
+                                                               language: data.spokenLanguages ?? []))))
+                self.movieItems.append(.init(type: .description(data.overview)))
                 self.success?()
             }
         }
     }
+
 }
 

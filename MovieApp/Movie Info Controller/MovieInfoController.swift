@@ -12,6 +12,7 @@ class MovieInfoController: UIViewController {
     @IBOutlet weak var movieInfoCollection: UICollectionView!
     
     let viewModel = MovieInfoViewModel()
+    var selectedID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,18 +20,13 @@ class MovieInfoController: UIViewController {
         configureViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-    }
-    
     func configureViewModel() {
         viewModel.error = { errorMessage in
             print(errorMessage)
         }
         viewModel.success = {
-            self.movieInfoCollection.reloadData()
-            print(self.viewModel.movieItems)
-        }
-        viewModel.getMovieInfoItems(movieID: 324857)
+            self.movieInfoCollection.reloadData()        }
+        viewModel.getMovieInfoItems(movieID: selectedID)
     }
 }
 
@@ -44,27 +40,30 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
         let item = viewModel.movieItems[indexPath.item]
         
         switch item.type {
-            
-        case .poster:
+        case .poster(let path):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTrailerCell", for: indexPath) as! MovieTrailerCell
-            if let posterPath = item.data as? String {
-                cell.movieImage.showImage(imageURL: posterPath)
-                    }
-            return cell
-            
-        case .title:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieNameCell", for: indexPath) as! MovieNameCell
-            if let title = item.data as? String {
-                cell.movieTitleLabel.text = title
+            if let path {
+                cell.movieImage.showImage(imageURL: path)
             }
             return cell
             
-        case .info:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDetailsCell", for: indexPath) as! MovieDetailsCell
+        case .title(let title):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieNameCell", for: indexPath) as! MovieNameCell
+            cell.movieTitleLabel.text = title
             return cell
             
-        case .description:
+        case .info(let info):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDetailsCell", for: indexPath) as! MovieDetailsCell
+            cell.movieLength.text = "\(info.length  ?? "0")min"
+            cell.movieRating.text = "N/A"
+            cell.movieLanguage.text = "English"
+            cell.movieRatingLabel.text = "⭐ \(info.rating ?? "0") / 10 "
+            cell.genres = info.genres
+            return cell
+            
+        case .description(let description):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDescriptionCell", for: indexPath) as! MovieDescriptionCell
+            cell.movieDescriptionLabel.text = description
             return cell
             
         case .cast:
@@ -76,26 +75,20 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let item = viewModel.movieItems[indexPath.item]
-               switch item.type {
-               case .poster:
-                   // Calculate height for poster cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 240) // Adjust as needed
-               case .title:
-                   // Calculate height for title cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 50) // Adjust as needed
-               case .info:
-                   // Calculate height for info cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 130) // Adjust as needed
-               case .description:
-                   // Calculate height for description cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 144) // Adjust as needed
-               case .cast:
-                   // Calculate height for cast cell based on your requirements
-                   return CGSize(width: collectionView.frame.width - 32, height: 150) // Adjust as needed
-           }
+        switch item.type {
+        case .poster:
+            return CGSize(width: collectionView.frame.width - 32, height: 240)
+        case .title:
+            return CGSize(width: collectionView.frame.width - 32, height: 50)
+        case .info:
+            return CGSize(width: collectionView.frame.width - 32, height: 130)
+        case .description:
+            return CGSize(width: collectionView.frame.width - 32, height: 144)
+        case .cast:
+            return CGSize(width: collectionView.frame.width - 32, height: 150)
+        }
     }
 }
-
 
 // MARK: Functions
 extension MovieInfoController {

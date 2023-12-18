@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,24 +22,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-TH-mO1">
-                        <rect key="frame" x="0.0" y="38" width="310" height="100"/>
-                        <string key="text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Spider-Man</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-TH-mO1">
+                        <rect key="frame" x="0.0" y="29" width="330" height="111"/>
+                        <mutableString key="text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appeWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Spider-ManWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Test</mutableString>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="YHP-ZP-Xdc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="0n5-dH-IAn"/>
+                <constraint firstItem="ZUc-TH-mO1" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Anz-Bc-sVp"/>
                 <constraint firstItem="YHP-ZP-Xdc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GQQ-wS-Ygp"/>
-                <constraint firstItem="ZUc-TH-mO1" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" constant="-10" id="OiL-0o-UPw"/>
                 <constraint firstAttribute="trailing" secondItem="YHP-ZP-Xdc" secondAttribute="trailing" constant="204" id="Ttg-tp-V7e"/>
-                <constraint firstItem="ZUc-TH-mO1" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.878788" constant="19.999959999999987" id="eui-O7-LUa"/>
-                <constraint firstItem="ZUc-TH-mO1" firstAttribute="top" secondItem="YHP-ZP-Xdc" secondAttribute="bottom" constant="10" id="r0H-3g-jsJ"/>
+                <constraint firstItem="ZUc-TH-mO1" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="gVY-Cv-tfa"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="ZUc-TH-mO1" secondAttribute="trailing" id="thj-tn-6hd"/>
+                <constraint firstAttribute="bottom" secondItem="ZUc-TH-mO1" secondAttribute="bottom" constant="4" id="wLr-BR-92d"/>
             </constraints>
             <size key="customSize" width="330" height="144"/>
             <connections>

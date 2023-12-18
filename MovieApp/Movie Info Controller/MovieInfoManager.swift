@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieInfoManager {
+class MovieInfoManager: MovieInfoUseCase {
     
     func getMovieInfo(endpoint: MovieInfoEndpoint, movieID: Int?, completion: @escaping ((MovieInfoModel?, String?) -> Void)) {
         NetworkManager.request(model: MovieInfoModel.self,
@@ -20,3 +20,5 @@ class MovieInfoManager {
         }
     }
 }
+
+

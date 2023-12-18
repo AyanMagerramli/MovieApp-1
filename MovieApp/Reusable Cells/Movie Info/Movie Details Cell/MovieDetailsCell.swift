@@ -15,22 +15,23 @@ class MovieDetailsCell: UICollectionViewCell {
     @IBOutlet weak var movieRating: UILabel!
     
     @IBOutlet weak var genreCollection: UICollectionView!
+    let viewModel = MovieInfoViewModel()
+    var genres: [Genre]?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         genreCollection.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
     }
-
 }
 
 extension MovieDetailsCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        genres?.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCell", for: indexPath) as! GenresCell
-        cell.genreLabel.text = "Action"
+        cell.genreLabel.text = genres?[indexPath.item].name ?? "bosh"
         return cell
     }
 }

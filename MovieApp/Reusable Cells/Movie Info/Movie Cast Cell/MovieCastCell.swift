@@ -15,6 +15,7 @@ class MovieCastCell: UICollectionViewCell {
         super.awakeFromNib()
         actorsCastCollection.register(UINib(nibName: "ActorsCell", bundle: nil), forCellWithReuseIdentifier: "ActorsCell")
     }
+    
     @IBAction func seemoreActionButton(_ sender: Any) {
     }
     
@@ -22,7 +23,7 @@ class MovieCastCell: UICollectionViewCell {
 
 extension MovieCastCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

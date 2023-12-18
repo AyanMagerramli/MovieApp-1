@@ -7,17 +7,13 @@
 
 import UIKit
 
-protocol HomeCellDelegate {
-    func didSelectMovie(at index: Int)
-}
-
 class HomeCell: UICollectionViewCell {
 
     @IBOutlet weak var movieCategoryLabel: UILabel!
     @IBOutlet weak var moviesCollection: UICollectionView!
     
     var movies = [MovieResult]()
-    var delegate: HomeCellDelegate?
+    var delegate: MovieSelectCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
