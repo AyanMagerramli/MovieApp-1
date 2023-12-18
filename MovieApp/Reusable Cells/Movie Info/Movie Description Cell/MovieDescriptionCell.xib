@@ -16,15 +16,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="330" height="144"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHP-ZP-Xdc">
-                        <rect key="frame" x="0.0" y="4" width="126" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHP-ZP-Xdc">
+                        <rect key="frame" x="0.0" y="4" width="126" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-TH-mO1">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUc-TH-mO1">
                         <rect key="frame" x="0.0" y="29" width="330" height="111"/>
-                        <mutableString key="text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appeWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Spider-ManWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Test</mutableString>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <string key="text">With Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appeWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Spider-ManWith Spider-Man's identity now revealed, Peter asks Doctor Strange for help. When  a spell goes wrong, dangerous foes from the other worlds start to appear, forcing Peter to discover what it truly means to be Test</string>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,15 +34,6 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <constraints>
-                <constraint firstItem="YHP-ZP-Xdc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="0n5-dH-IAn"/>
-                <constraint firstItem="ZUc-TH-mO1" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="Anz-Bc-sVp"/>
-                <constraint firstItem="YHP-ZP-Xdc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="GQQ-wS-Ygp"/>
-                <constraint firstAttribute="trailing" secondItem="YHP-ZP-Xdc" secondAttribute="trailing" constant="204" id="Ttg-tp-V7e"/>
-                <constraint firstItem="ZUc-TH-mO1" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="gVY-Cv-tfa"/>
-                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="ZUc-TH-mO1" secondAttribute="trailing" id="thj-tn-6hd"/>
-                <constraint firstAttribute="bottom" secondItem="ZUc-TH-mO1" secondAttribute="bottom" constant="4" id="wLr-BR-92d"/>
-            </constraints>
             <size key="customSize" width="330" height="144"/>
             <connections>
                 <outlet property="movieDescriptionLabel" destination="ZUc-TH-mO1" id="EJ9-nR-xEe"/>

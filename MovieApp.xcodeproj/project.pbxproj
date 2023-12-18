@@ -14,6 +14,12 @@
 		900C91712B2CAE1800CAA4C4 /* PeopleEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C91702B2CAE1800CAA4C4 /* PeopleEndpoint.swift */; };
 		902940AB2B305EF300F1967C /* MovieInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940AA2B305EF300F1967C /* MovieInfoUseCase.swift */; };
 		902940AE2B30603E00F1967C /* MovieSelectCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940AD2B30603E00F1967C /* MovieSelectCellDelegate.swift */; };
+		902940B12B3065EF00F1967C /* PeopleInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940B02B3065EF00F1967C /* PeopleInfoViewModel.swift */; };
+		902940B32B3065FE00F1967C /* PeopleInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940B22B3065FE00F1967C /* PeopleInfoManager.swift */; };
+		902940B52B30660E00F1967C /* PeopleInfoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940B42B30660E00F1967C /* PeopleInfoEndpoint.swift */; };
+		902940B72B30661900F1967C /* PeopleInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940B62B30661900F1967C /* PeopleInfoUseCase.swift */; };
+		902940B92B30663100F1967C /* PeopleInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940B82B30663100F1967C /* PeopleInfoController.swift */; };
+		902940BB2B30688700F1967C /* PeopleInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902940BA2B30688700F1967C /* PeopleInfoModel.swift */; };
 		902A89912B1CA7D5005D266A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902A89902B1CA7D5005D266A /* AppDelegate.swift */; };
 		902A89932B1CA7D5005D266A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 902A89922B1CA7D5005D266A /* SceneDelegate.swift */; };
 		902A89982B1CA7D5005D266A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 902A89962B1CA7D5005D266A /* Main.storyboard */; };
@@ -77,6 +83,12 @@
 		900C91702B2CAE1800CAA4C4 /* PeopleEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleEndpoint.swift; sourceTree = "<group>"; };
 		902940AA2B305EF300F1967C /* MovieInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoUseCase.swift; sourceTree = "<group>"; };
 		902940AD2B30603E00F1967C /* MovieSelectCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSelectCellDelegate.swift; sourceTree = "<group>"; };
+		902940B02B3065EF00F1967C /* PeopleInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoViewModel.swift; sourceTree = "<group>"; };
+		902940B22B3065FE00F1967C /* PeopleInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoManager.swift; sourceTree = "<group>"; };
+		902940B42B30660E00F1967C /* PeopleInfoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoEndpoint.swift; sourceTree = "<group>"; };
+		902940B62B30661900F1967C /* PeopleInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoUseCase.swift; sourceTree = "<group>"; };
+		902940B82B30663100F1967C /* PeopleInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoController.swift; sourceTree = "<group>"; };
+		902940BA2B30688700F1967C /* PeopleInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleInfoModel.swift; sourceTree = "<group>"; };
 		902A898D2B1CA7D5005D266A /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		902A89902B1CA7D5005D266A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		902A89922B1CA7D5005D266A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +174,18 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		902940AF2B3065D200F1967C /* People Info Controller */ = {
+			isa = PBXGroup;
+			children = (
+				902940B82B30663100F1967C /* PeopleInfoController.swift */,
+				902940B02B3065EF00F1967C /* PeopleInfoViewModel.swift */,
+				902940B22B3065FE00F1967C /* PeopleInfoManager.swift */,
+				902940B62B30661900F1967C /* PeopleInfoUseCase.swift */,
+				902940B42B30660E00F1967C /* PeopleInfoEndpoint.swift */,
+			);
+			path = "People Info Controller";
+			sourceTree = "<group>";
+		};
 		902A89842B1CA7D5005D266A = {
 			isa = PBXGroup;
 			children = (
@@ -181,11 +205,11 @@
 		902A898F2B1CA7D5005D266A /* MovieApp */ = {
 			isa = PBXGroup;
 			children = (
-				902940AC2B30603500F1967C /* Protocols */,
 				902A89A52B1CA874005D266A /* Home Controller */,
 				90F27F8C2B245829008DE613 /* Search Controller */,
 				90E3B4E62B2B00180032BB06 /* Movie Info Controller */,
 				90577A942B2376AC001BA06A /* People */,
+				902940AF2B3065D200F1967C /* People Info Controller */,
 				902A89A62B1CA87A005D266A /* Network Manager */,
 				902A89962B1CA7D5005D266A /* Main.storyboard */,
 				902A89922B1CA7D5005D266A /* SceneDelegate.swift */,
@@ -193,6 +217,7 @@
 				90B478572B1DC2C700F4C21E /* Reusable Cells */,
 				9098A8372B1F01B9002F7101 /* Extensions */,
 				902A89A42B1CA86D005D266A /* Data Manager */,
+				902940AC2B30603500F1967C /* Protocols */,
 				90C7DCB62B1DBA8700316E7E /* Fonts */,
 				902A89992B1CA7D6005D266A /* Assets.xcassets */,
 				902A899B2B1CA7D6005D266A /* LaunchScreen.storyboard */,
@@ -208,6 +233,7 @@
 				90E3B4ED2B2B13AF0032BB06 /* MovieInfoModel.swift */,
 				90577A992B2376E5001BA06A /* People.swift */,
 				900846552B21A8F000100DD8 /* MovieCategoryModel.swift */,
+				902940BA2B30688700F1967C /* PeopleInfoModel.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -496,9 +522,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				902940B72B30661900F1967C /* PeopleInfoUseCase.swift in Sources */,
 				90E3B4EE2B2B13AF0032BB06 /* MovieInfoModel.swift in Sources */,
 				90CF69792B21CAB900D594CD /* NetworkHelper.swift in Sources */,
+				902940B32B3065FE00F1967C /* PeopleInfoManager.swift in Sources */,
 				900846562B21A8F000100DD8 /* MovieCategoryModel.swift in Sources */,
+				902940B12B3065EF00F1967C /* PeopleInfoViewModel.swift in Sources */,
 				90E3B4E52B2AFC6D0032BB06 /* SearchListUseCase.swift in Sources */,
 				900C916D2B2CAD8E00CAA4C4 /* HomeEndpoint.swift in Sources */,
 				900C916F2B2CAD9A00CAA4C4 /* MovieInfoEndpoint.swift in Sources */,
@@ -515,6 +544,7 @@
 				90F27F8E2B245845008DE613 /* SearchController.swift in Sources */,
 				902940AB2B305EF300F1967C /* MovieInfoUseCase.swift in Sources */,
 				90E3B4E12B2AFC3B0032BB06 /* MovieListUseCase.swift in Sources */,
+				902940B92B30663100F1967C /* PeopleInfoController.swift in Sources */,
 				902940AE2B30603E00F1967C /* MovieSelectCellDelegate.swift in Sources */,
 				90E3B4EA2B2B02AA0032BB06 /* MovieInfoViewModel.swift in Sources */,
 				90E3B5112B2B22500032BB06 /* MovieCastCell.swift in Sources */,
@@ -526,7 +556,9 @@
 				900C91712B2CAE1800CAA4C4 /* PeopleEndpoint.swift in Sources */,
 				902A89B12B1CAE51005D266A /* HomePageViewModel.swift in Sources */,
 				90F27F932B24588D008DE613 /* MovieCell.swift in Sources */,
+				902940BB2B30688700F1967C /* PeopleInfoModel.swift in Sources */,
 				900C916B2B2CAD8300CAA4C4 /* SearchEndpoint.swift in Sources */,
+				902940B52B30660E00F1967C /* PeopleInfoEndpoint.swift in Sources */,
 				90577A9A2B2376E5001BA06A /* People.swift in Sources */,
 				90E3B5022B2B1CE60032BB06 /* MovieNameCell.swift in Sources */,
 				90E3B50C2B2B1FFD0032BB06 /* MovieDescriptionCell.swift in Sources */,

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRt-70-JVF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nRt-70-JVF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -93,7 +93,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AMT-is-uVw"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3ob-SJ-3z4" firstAttribute="top" secondItem="u3D-E1-sKL" secondAttribute="top" id="9Z6-pM-jcQ"/>
                             <constraint firstItem="AMT-is-uVw" firstAttribute="bottom" secondItem="3ob-SJ-3z4" secondAttribute="bottom" id="Ksz-yV-MRI"/>
@@ -211,7 +211,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSz-HK-nEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3884.7328244274809" y="279.57746478873241"/>
+            <point key="canvasLocation" x="3779" y="708"/>
+        </scene>
+        <!--People Info Controller-->
+        <scene sceneID="82Z-n1-3sd">
+            <objects>
+                <viewController storyboardIdentifier="PeopleInfoController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MIr-JO-8tl" customClass="PeopleInfoController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8v4-MY-CIT">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gbN-PM-eRL">
+                                <rect key="frame" x="16" y="59" width="361" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lRI-zd-psb">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="MIr-JO-8tl" id="VdN-EU-gwQ"/>
+                                    <outlet property="delegate" destination="MIr-JO-8tl" id="4ed-Ce-1td"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YYI-77-C94"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gbN-PM-eRL" firstAttribute="leading" secondItem="YYI-77-C94" secondAttribute="leading" constant="16" id="2xm-JU-Dv2"/>
+                            <constraint firstItem="YYI-77-C94" firstAttribute="trailing" secondItem="gbN-PM-eRL" secondAttribute="trailing" constant="16" id="Jp0-jf-hwU"/>
+                            <constraint firstItem="gbN-PM-eRL" firstAttribute="top" secondItem="YYI-77-C94" secondAttribute="top" id="bSA-F1-gDC"/>
+                            <constraint firstItem="YYI-77-C94" firstAttribute="bottom" secondItem="gbN-PM-eRL" secondAttribute="bottom" id="ir0-uX-Das"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="peopleInfoCollection" destination="gbN-PM-eRL" id="ODw-jh-7O7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wZr-6U-xHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4536.6412213740459" y="707.04225352112678"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="d0z-EX-q29">
@@ -267,7 +308,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqS-kP-Lnx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2958.0152671755723" y="279.57746478873241"/>
+            <point key="canvasLocation" x="2956" y="708"/>
         </scene>
     </scenes>
     <resources>
@@ -283,9 +324,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -65,5 +65,12 @@ extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.pagination(index: indexPath.item)
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let index = viewModel.peopleItems[indexPath.item].id ?? 1
+        print(index)
+        let controller = storyboard?.instantiateViewController(withIdentifier: "PeopleInfoController") as! PeopleInfoController
+        controller.selectedID = index
+        navigationController?.show(controller, sender: nil)
+    }
 }
 
