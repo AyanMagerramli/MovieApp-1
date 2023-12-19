@@ -55,9 +55,9 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
         case .info(let info):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDetailsCell", for: indexPath) as! MovieDetailsCell
             cell.movieLength.text = "\(info.length  ?? "0")min"
-            cell.movieRating.text = "N/A"
-            cell.movieLanguage.text = "English"
-            cell.movieRatingLabel.text = "⭐ \(info.rating ?? "0") / 10 "
+            cell.movieReleaseDate.text = info.releaseDate
+            cell.movieLanguage.text = info.language
+            cell.movieRatingLabel.text = "⭐ \(info.rating ?? "0") / 10 IMDb "
             cell.genres = info.genres
             return cell
             

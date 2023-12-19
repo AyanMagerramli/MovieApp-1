@@ -45,6 +45,7 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         cell.delegate = self
+        cell.seeAllDelegate = self
         let item = viewModel.movieItems[indexPath.item]
         cell.configure(title: item.title, movies: item.movies)
         return cell
@@ -55,11 +56,16 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
 }
 
-extension HomePageController: MovieSelectCellDelegate {
+extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
+    func seeAllDelegate() {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "SelectedCategoryController") as! SelectedCategoryController
+        navigationController?.show(controller, sender: nil)
+    }
+    
     func didSelectMovie(at index: Int) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
         controller.selectedID = index
-        print ("Ali Jafarov \(index)" )
+        print ("kinonun id'si\(index)" )
         navigationController?.show(controller, sender: nil)
     }
     

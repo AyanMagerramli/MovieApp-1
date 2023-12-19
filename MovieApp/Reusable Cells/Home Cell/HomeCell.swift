@@ -14,17 +14,18 @@ class HomeCell: UICollectionViewCell {
     
     var movies = [MovieResult]()
     var delegate: MovieSelectCellDelegate?
+    var seeAllDelegate: DidButtonTappedDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        moviesCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil), forCellWithReuseIdentifier: "TopImageBottomLabelCell")
+        configureXib()
     }
     
-    func configure(title: String, movies: [MovieResult]) {
-        movieCategoryLabel.text = title
-        self.movies = movies
-        moviesCollection.reloadData()
+    @IBAction func seeAllButton(_ sender: Any) {
+        seeAllDelegate?.seeAllDelegate()
+        print(movieCategoryLabel ?? "bosh")
     }
+    
 }
 
 extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
@@ -47,3 +48,16 @@ extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource,UIColle
     }
 }
 
+// MARK: Functions
+extension HomeCell {
+    
+    func configure(title: String, movies: [MovieResult]) {
+        movieCategoryLabel.text = title
+        self.movies = movies
+        moviesCollection.reloadData()
+    }
+    
+    func configureXib() {
+        moviesCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil), forCellWithReuseIdentifier: "TopImageBottomLabelCell")
+    }
+}

@@ -68,6 +68,47 @@
             </objects>
             <point key="canvasLocation" x="3884.7328244274809" y="-416.19718309859155"/>
         </scene>
+        <!--Selected Category Controller-->
+        <scene sceneID="YMF-pm-fpR">
+            <objects>
+                <viewController storyboardIdentifier="SelectedCategoryController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qHu-Rl-03O" customClass="SelectedCategoryController" customModule="MovieApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a9m-he-Eqw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eXp-U5-NQw">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Hj-Kq-QF2">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="qHu-Rl-03O" id="xsJ-Q8-fvn"/>
+                                    <outlet property="delegate" destination="qHu-Rl-03O" id="tFX-IF-jw4"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zDT-zW-vTQ"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="zDT-zW-vTQ" firstAttribute="trailing" secondItem="eXp-U5-NQw" secondAttribute="trailing" id="1b9-XF-Vx1"/>
+                            <constraint firstItem="eXp-U5-NQw" firstAttribute="top" secondItem="zDT-zW-vTQ" secondAttribute="top" id="AXs-Lw-COj"/>
+                            <constraint firstItem="eXp-U5-NQw" firstAttribute="leading" secondItem="zDT-zW-vTQ" secondAttribute="leading" id="fOs-Om-GCJ"/>
+                            <constraint firstItem="zDT-zW-vTQ" firstAttribute="bottom" secondItem="eXp-U5-NQw" secondAttribute="bottom" id="qwy-kY-6B3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="eXp-U5-NQw" id="oOE-A0-tSz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cu7-n9-pgc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4642" y="53"/>
+        </scene>
         <!--Movie Info Controller-->
         <scene sceneID="NOu-tq-8Fj">
             <objects>
@@ -107,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv7-zc-wpr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4646.5648854961828" y="-169.01408450704227"/>
+            <point key="canvasLocation" x="5456" y="-669"/>
         </scene>
         <!--Search Controller-->
         <scene sceneID="rsk-Po-BRi">
@@ -169,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bWZ-B3-F5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4647" y="-873"/>
+            <point key="canvasLocation" x="4642" y="-669"/>
         </scene>
         <!--People Controller-->
         <scene sceneID="uzX-aP-Yhn">
@@ -324,6 +365,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

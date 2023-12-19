@@ -24,7 +24,8 @@ struct MovieInfo {
     let rating: String?
     let genres: [Genre]
     let length: String?
-    let language: [SpokenLanguage]
+    let releaseDate: String?
+    let language: String?
 }
 
 class MovieInfoViewModel {
@@ -41,9 +42,10 @@ class MovieInfoViewModel {
             } else if let data {
                 self.movieItems.append(.init(type: .poster(data.posterPath)))
                 self.movieItems.append(.init(type: .title(data.title)))
-                self.movieItems.append(.init(type: .info(.init(rating: "\(data.voteAverage ?? 0.0)", 
+                self.movieItems.append(.init(type: .info(.init(rating: "\((data.voteAverage?.rounded() ?? 0))", 
                                                                genres: data.genres ?? [], length: "\(data.runtime ?? 0)",
-                                                               language: data.spokenLanguages ?? []))))
+                                                               releaseDate: data.releaseDate, 
+                                                               language: data.originalLanguage?.uppercased()))))
                 self.movieItems.append(.init(type: .description(data.overview)))
                 self.success?()
             }

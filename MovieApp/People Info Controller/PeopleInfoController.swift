@@ -32,6 +32,7 @@ extension PeopleInfoController: UICollectionViewDelegate, UICollectionViewDataSo
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
         cell.movieTitleLabel.text = item.title
         cell.movieImage.showImage(imageURL: item.backdropPath)
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

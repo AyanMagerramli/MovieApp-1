@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol PeopleInfoUseCase {
+    func getPeopleInfo(peopleID: Int?, completion: @escaping ((PeopleInfoModel?, String?) -> Void))
+}

@@ -11,10 +11,12 @@ class MovieDetailsCell: UICollectionViewCell {
 
     @IBOutlet weak var movieRatingLabel: UILabel!
     @IBOutlet weak var movieLength: UILabel!
+    @IBOutlet weak var movieReleaseDate: UILabel!
     @IBOutlet weak var movieLanguage: UILabel!
-    @IBOutlet weak var movieRating: UILabel!
     
     @IBOutlet weak var genreCollection: UICollectionView!
+    
+    
     let viewModel = MovieInfoViewModel()
     var genres: [Genre]?
     
