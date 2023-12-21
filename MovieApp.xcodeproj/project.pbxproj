@@ -79,6 +79,7 @@
 		90F27F932B24588D008DE613 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F27F912B24588D008DE613 /* MovieCell.swift */; };
 		90F27F942B24588D008DE613 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90F27F922B24588D008DE613 /* MovieCell.xib */; };
 		90FD63A42B341EDF004BFA7F /* CastInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FD63A32B341EDF004BFA7F /* CastInfoModel.swift */; };
+		90FD63A62B342D8B004BFA7F /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FD63A52B342D8B004BFA7F /* Custom Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		90F27F912B24588D008DE613 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		90F27F922B24588D008DE613 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		90FD63A32B341EDF004BFA7F /* CastInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastInfoModel.swift; sourceTree = "<group>"; };
+		90FD63A52B342D8B004BFA7F /* Custom Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Models.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 				900846552B21A8F000100DD8 /* MovieCategoryModel.swift */,
 				902940BA2B30688700F1967C /* PeopleInfoModel.swift */,
 				90FD63A32B341EDF004BFA7F /* CastInfoModel.swift */,
+				90FD63A52B342D8B004BFA7F /* Custom Models.swift */,
 			);
 			path = "Data Manager";
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				902940C92B30C30B00F1967C /* SelectedCategoryViewModel.swift in Sources */,
 				90E3B4E32B2AFC520032BB06 /* PeopleListUseCase.swift in Sources */,
 				90E3B4F72B2B15300032BB06 /* MovieTrailerCell.swift in Sources */,
+				90FD63A62B342D8B004BFA7F /* Custom Models.swift in Sources */,
 				90577A9C2B23790D001BA06A /* PeopleController.swift in Sources */,
 				900C91712B2CAE1800CAA4C4 /* PeopleEndpoint.swift in Sources */,
 				902A89B12B1CAE51005D266A /* HomePageViewModel.swift in Sources */,

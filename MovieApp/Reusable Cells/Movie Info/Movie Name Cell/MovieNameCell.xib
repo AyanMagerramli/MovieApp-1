@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spiderman: No Way Home" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMX-7x-4hM">
-                        <rect key="frame" x="0.0" y="9.0000000000000018" width="313" height="21.666666666666671"/>
+                        <rect key="frame" x="0.0" y="12.000000000000002" width="313" height="21.666666666666671"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="313" id="UUf-lV-qct"/>
                         </constraints>
@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfZ-Vb-yK8">
-                        <rect key="frame" x="315" y="0.0" width="46" height="40"/>
+                        <rect key="frame" x="315" y="12" width="46" height="28"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="bookmark" catalog="system"/>
                         <connections>
@@ -39,11 +39,11 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="DfZ-Vb-yK8" secondAttribute="bottom" constant="10" id="3fQ-XS-m1i"/>
-                <constraint firstItem="DfZ-Vb-yK8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4Tr-CC-s4d"/>
+                <constraint firstItem="DfZ-Vb-yK8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="4Tr-CC-s4d"/>
                 <constraint firstAttribute="trailing" secondItem="DfZ-Vb-yK8" secondAttribute="trailing" id="5JU-Jx-A2Q"/>
                 <constraint firstItem="tMX-7x-4hM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ALd-Fb-GbO"/>
                 <constraint firstItem="DfZ-Vb-yK8" firstAttribute="leading" secondItem="tMX-7x-4hM" secondAttribute="trailing" constant="2" id="AxW-Vj-kwO"/>
-                <constraint firstItem="tMX-7x-4hM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="kCh-Vd-zLq"/>
+                <constraint firstItem="tMX-7x-4hM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="kCh-Vd-zLq"/>
             </constraints>
             <size key="customSize" width="330" height="50"/>
             <connections>

@@ -40,11 +40,10 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
         let item = viewModel.movieItems[indexPath.item]
         
         switch item.type {
+            
         case .poster(let path):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTrailerCell", for: indexPath) as! MovieTrailerCell
-            if let path {
                 cell.movieImage.showImage(imageURL: path)
-            }
             return cell
             
         case .title(let title):

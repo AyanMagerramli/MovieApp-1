@@ -8,4 +8,5 @@
 import Foundation
 
 protocol MovieInfoUseCase {
-    func getMovieInfo(endpoint: MovieInfoEndpoint, movieID: Int?, completion: @escaping ((MovieInfoModel?, String?) -> Void))}
+    func getMovieInfo(endpoint: MovieInfoEndpoint, movieID: Int?, completion: @escaping ((MovieInfoModel?, String?) -> Void))
+}
