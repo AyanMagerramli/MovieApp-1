@@ -11,20 +11,48 @@ class SelectedCategoryController: UIViewController {
  
     @IBOutlet weak var collection: UICollectionView!
     
+    let viewModel = SelectedCategoryViewModel()
+    var selectedCategory: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureViewModel()
         configXib()
+//        print(selectedCategory)
+    }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        print(selectedCategory)
+//    }
+    
+    func configureViewModel() {
+        viewModel.error = { error in
+            print(error ?? "bosh")
+        }
+        viewModel.success = {
+            self.collection.reloadData()
+        }
+        
+        viewModel.getItems(selectedCategory: selectedCategory ?? "")
     }
 }
 
 extension SelectedCategoryController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        viewModel.movieItems.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
+        cell.movieImage.showImage(imageURL: viewModel.movieItems[indexPath.item].backdropPath)
+        cell.movieTitleLabel.text = viewModel.movieItems[indexPath.item].title
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
+        controller.selectedID = viewModel.movieItems[indexPath.item].id
+        navigationController?.show(controller, sender: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

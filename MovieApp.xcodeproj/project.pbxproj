@@ -37,6 +37,7 @@
 		90577A982B2376D6001BA06A /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90577A972B2376D6001BA06A /* PeopleViewModel.swift */; };
 		90577A9A2B2376E5001BA06A /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90577A992B2376E5001BA06A /* People.swift */; };
 		90577A9C2B23790D001BA06A /* PeopleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90577A9B2B23790D001BA06A /* PeopleController.swift */; };
+		907BF2832B344427005EF884 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907BF2822B344427005EF884 /* Coordinator.swift */; };
 		9098A8392B1F01CE002F7101 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9098A8382B1F01CE002F7101 /* ImageExtension.swift */; };
 		9098A83C2B1F06BD002F7101 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 9098A83B2B1F06BD002F7101 /* SDWebImage */; };
 		9098A83E2B1F06BD002F7101 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9098A83D2B1F06BD002F7101 /* SDWebImageMapKit */; };
@@ -114,6 +115,7 @@
 		90577A972B2376D6001BA06A /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		90577A992B2376E5001BA06A /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		90577A9B2B23790D001BA06A /* PeopleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleController.swift; sourceTree = "<group>"; };
+		907BF2822B344427005EF884 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9098A8382B1F01CE002F7101 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		9098A83F2B1F0EDE002F7101 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		9098A8402B1F0EDE002F7101 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -242,10 +244,8 @@
 				902A89902B1CA7D5005D266A /* AppDelegate.swift */,
 				902A89A62B1CA87A005D266A /* Network Manager */,
 				90B478572B1DC2C700F4C21E /* Reusable Cells */,
-				9098A8372B1F01B9002F7101 /* Extensions */,
+				9098A8372B1F01B9002F7101 /* Helper */,
 				902A89A42B1CA86D005D266A /* Data Manager */,
-				902940AC2B30603500F1967C /* Protocols */,
-				90C7DCB62B1DBA8700316E7E /* Fonts */,
 				902A89992B1CA7D6005D266A /* Assets.xcassets */,
 				902A899B2B1CA7D6005D266A /* LaunchScreen.storyboard */,
 				902A899E2B1CA7D6005D266A /* Info.plist */,
@@ -299,12 +299,15 @@
 			path = People;
 			sourceTree = "<group>";
 		};
-		9098A8372B1F01B9002F7101 /* Extensions */ = {
+		9098A8372B1F01B9002F7101 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				902940AC2B30603500F1967C /* Protocols */,
 				9098A8382B1F01CE002F7101 /* ImageExtension.swift */,
+				90C7DCB62B1DBA8700316E7E /* Fonts */,
+				907BF2822B344427005EF884 /* Coordinator.swift */,
 			);
-			path = Extensions;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		90A5DDF12B2C63410026F21C /* Genre Cell */ = {
@@ -559,6 +562,7 @@
 				902940B32B3065FE00F1967C /* PeopleInfoManager.swift in Sources */,
 				90FD63A42B341EDF004BFA7F /* CastInfoModel.swift in Sources */,
 				900846562B21A8F000100DD8 /* MovieCategoryModel.swift in Sources */,
+				907BF2832B344427005EF884 /* Coordinator.swift in Sources */,
 				902940B12B3065EF00F1967C /* PeopleInfoViewModel.swift in Sources */,
 				90E3B4E52B2AFC6D0032BB06 /* SearchListUseCase.swift in Sources */,
 				900C916D2B2CAD8E00CAA4C4 /* HomeEndpoint.swift in Sources */,

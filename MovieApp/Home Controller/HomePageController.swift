@@ -57,8 +57,18 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
 }
 
 extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
-    func seeAllDelegate() {
+    func seeAllDelegate(at category: String) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SelectedCategoryController") as! SelectedCategoryController
+        switch (category) {
+        case "Now Playing":
+            controller.selectedCategory = "movie/now_playing"
+        case "Popular":
+            controller.selectedCategory = "movie/popular"
+        case "Top Rated":
+            controller.selectedCategory = "movie/top_rated"
+        default:
+            controller.selectedCategory = "movie/upcoming"
+        }
         navigationController?.show(controller, sender: nil)
     }
     

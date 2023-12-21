@@ -13,3 +13,4 @@ enum HomeEndpoint: String {
     case topRated = "movie/top_rated"
     case upcoming = "movie/upcoming"
 }
+

@@ -12,5 +12,5 @@ protocol MovieSelectCellDelegate {
 }
 
 protocol DidButtonTappedDelegate {
-    func seeAllDelegate()
+    func seeAllDelegate(at category: String)
 }
