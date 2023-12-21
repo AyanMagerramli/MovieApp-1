@@ -16,6 +16,8 @@ class MovieCastCell: UICollectionViewCell {
         actorsCastCollection.register(UINib(nibName: "ActorsCell", bundle: nil), forCellWithReuseIdentifier: "ActorsCell")
     }
     
+    var cast: [CastResult]?
+    
     @IBAction func seemoreActionButton(_ sender: Any) {
     }
     
@@ -23,13 +25,13 @@ class MovieCastCell: UICollectionViewCell {
 
 extension MovieCastCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        4
+        cast?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActorsCell", for: indexPath) as! ActorsCell
-        cell.actorImage.image = UIImage(named: "jasons")
-        cell.actorNameLabel.text = "Jason Statham"
+        cell.actorImage.showImage(imageURL: cast?[indexPath.item].profilePath)
+        cell.actorNameLabel.text = cast?[indexPath.item].name
         return cell
     }
 }

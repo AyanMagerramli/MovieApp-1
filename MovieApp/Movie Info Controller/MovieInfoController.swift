@@ -66,8 +66,9 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.movieDescriptionLabel.text = description
             return cell
             
-        case .cast:
+        case .cast(let cast):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
+            cell.cast = cast
             return cell
             
         }

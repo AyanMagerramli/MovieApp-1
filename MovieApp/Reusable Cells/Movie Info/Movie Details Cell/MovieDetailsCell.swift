@@ -16,8 +16,6 @@ class MovieDetailsCell: UICollectionViewCell {
     
     @IBOutlet weak var genreCollection: UICollectionView!
     
-    
-    let viewModel = MovieInfoViewModel()
     var genres: [Genre]?
     
     override func awakeFromNib() {

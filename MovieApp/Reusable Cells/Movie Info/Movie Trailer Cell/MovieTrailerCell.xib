@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,9 +16,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-V1-Ypu">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-V1-Ypu">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="243"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="243" id="8pg-Ha-W9g"/>
+                            <constraint firstAttribute="width" constant="361" id="RM7-fa-nyx"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="20"/>
@@ -41,6 +44,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Wac-V1-Ypu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="L9m-VA-d1B"/>
+                <constraint firstAttribute="bottom" secondItem="Wac-V1-Ypu" secondAttribute="bottom" constant="-3" id="OGb-m0-xt9"/>
+                <constraint firstItem="Wac-V1-Ypu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wi9-iE-5PU"/>
+                <constraint firstAttribute="trailing" secondItem="Wac-V1-Ypu" secondAttribute="trailing" id="gR5-Q5-LdE"/>
+            </constraints>
             <size key="customSize" width="330" height="243"/>
             <connections>
                 <outlet property="movieImage" destination="Wac-V1-Ypu" id="OMH-EM-Q4b"/>

@@ -9,7 +9,7 @@ import Foundation
 
 class PeopleInfoManager: PeopleInfoUseCase {
     func getPeopleInfo(peopleID: Int?, completion: @escaping ((PeopleInfoModel?, String?) -> Void)) {
-        let url = "\(PeopleInfoEndpoint.personInfo.rawValue)\(peopleID ?? 0)/movie_credits"
+        let url = "\(PeopleInfoEndpoint.personInfo.rawValue)\(peopleID ?? 0)/credits"
         NetworkManager.request(model: PeopleInfoModel.self, endpoint: url) { data, errorMessage in
             if let errorMessage {
                 completion(nil, errorMessage.localizedDescription)

@@ -12,7 +12,7 @@ enum MovieDetailItemType {
     case title(String?)
     case info(MovieInfo)
     case description(String?)
-    case cast(PeopleResult)
+    case cast([CastResult]?)
 }
 
 struct MovieDetailModel {
@@ -27,6 +27,8 @@ struct MovieInfo {
     let releaseDate: String?
     let language: String?
 }
+
+
 
 class MovieInfoViewModel {
     
@@ -50,7 +52,16 @@ class MovieInfoViewModel {
                 self.success?()
             }
         }
+        manager.getCastInfo(movieID: movieID) { data, errorMessage in
+            if let errorMessage {
+                self.error?(errorMessage)
+            } else if let data {
+                self.movieItems.append(.init(type: .cast(data.cast ?? [])))
+                self.success?()
+            }
+        }
     }
+    
 
 }
 
