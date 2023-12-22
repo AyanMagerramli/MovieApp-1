@@ -93,7 +93,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zDT-zW-vTQ"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zDT-zW-vTQ" firstAttribute="trailing" secondItem="eXp-U5-NQw" secondAttribute="trailing" id="1b9-XF-Vx1"/>
                             <constraint firstItem="eXp-U5-NQw" firstAttribute="top" secondItem="zDT-zW-vTQ" secondAttribute="top" id="AXs-Lw-COj"/>
@@ -365,9 +365,6 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

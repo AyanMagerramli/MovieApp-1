@@ -16,12 +16,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="361" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-V1-Ypu">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spiderman" translatesAutoresizingMaskIntoConstraints="NO" id="Wac-V1-Ypu">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="240"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="240" id="8pg-Ha-W9g"/>
-                            <constraint firstAttribute="width" constant="361" id="RM7-fa-nyx"/>
-                        </constraints>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="20"/>
@@ -32,11 +29,6 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="Wac-V1-Ypu" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="L9m-VA-d1B"/>
-                <constraint firstItem="Wac-V1-Ypu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Wi9-iE-5PU"/>
-                <constraint firstAttribute="trailing" secondItem="Wac-V1-Ypu" secondAttribute="trailing" id="gR5-Q5-LdE"/>
-            </constraints>
             <size key="customSize" width="330" height="243"/>
             <connections>
                 <outlet property="movieImage" destination="Wac-V1-Ypu" id="OMH-EM-Q4b"/>

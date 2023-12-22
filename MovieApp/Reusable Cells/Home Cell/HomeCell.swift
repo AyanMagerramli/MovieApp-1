@@ -22,7 +22,7 @@ class HomeCell: UICollectionViewCell {
     }
     
     @IBAction func seeAllButton(_ sender: Any) {
-        seeAllDelegate?.seeAllDelegate(at: movieCategoryLabel.text ?? "bosh")
+        seeAllDelegate?.seeAllDelegate(at: HomeCategory(rawValue: movieCategoryLabel.text!) ?? HomeCategory.nowPlaying)
         print(movieCategoryLabel.text ?? "")
 
     }

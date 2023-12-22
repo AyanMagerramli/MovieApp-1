@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="freeGuy" translatesAutoresizingMaskIntoConstraints="NO" id="1eb-P8-fYp">
-                        <rect key="frame" x="0.0" y="0.0" width="261" height="329"/>
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="320"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Guy 2021" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-Gb-W26">
-                        <rect key="frame" x="0.0" y="333" width="261" height="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Free Guy 2021" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdd-Gb-W26">
+                        <rect key="frame" x="0.0" y="328" width="261" height="17"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,11 +31,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Kdd-Gb-W26" secondAttribute="trailing" id="1VC-2E-o1H"/>
                 <constraint firstAttribute="bottom" secondItem="Kdd-Gb-W26" secondAttribute="bottom" constant="4" id="1gu-zE-qZ1"/>
-                <constraint firstAttribute="bottom" secondItem="1eb-P8-fYp" secondAttribute="bottom" constant="20" id="3Re-LY-xEv"/>
                 <constraint firstItem="1eb-P8-fYp" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9bc-PH-8MP"/>
                 <constraint firstItem="1eb-P8-fYp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GDC-wW-0WK"/>
                 <constraint firstItem="Kdd-Gb-W26" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="c7B-6j-Pry"/>
-                <constraint firstItem="Kdd-Gb-W26" firstAttribute="top" secondItem="1eb-P8-fYp" secondAttribute="bottom" constant="4" id="e4q-tn-gHf"/>
+                <constraint firstItem="Kdd-Gb-W26" firstAttribute="top" secondItem="1eb-P8-fYp" secondAttribute="bottom" constant="8" id="e4q-tn-gHf"/>
                 <constraint firstAttribute="trailing" secondItem="1eb-P8-fYp" secondAttribute="trailing" id="q2N-f3-qJ9"/>
             </constraints>
             <size key="customSize" width="261" height="411"/>

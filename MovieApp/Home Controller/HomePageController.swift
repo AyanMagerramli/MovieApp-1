@@ -8,11 +8,11 @@
 import UIKit
 
 class HomePageController: UIViewController {
-        
+    
     @IBOutlet weak var movieCategoryCollection: UICollectionView!
     
     let viewModel = HomePageViewModel()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
@@ -37,7 +37,7 @@ class HomePageController: UIViewController {
 }
 
 extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         viewModel.movieItems.count
     }
@@ -57,17 +57,22 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
 }
 
 extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
-    func seeAllDelegate(at category: String) {
+    func seeAllDelegate(at category: HomeCategory) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SelectedCategoryController") as! SelectedCategoryController
+        
         switch (category) {
-        case "Now Playing":
-            controller.selectedCategory = "movie/now_playing"
-        case "Popular":
-            controller.selectedCategory = "movie/popular"
-        case "Top Rated":
-            controller.selectedCategory = "movie/top_rated"
+        case .nowPlaying:
+            controller.selectedCategory = HomeEndpoint.nowPlaying.rawValue
+            controller.title = category.rawValue
+        case .popular:
+            controller.selectedCategory = HomeEndpoint.popular.rawValue
+            controller.title = category.rawValue
+        case .topRated:
+            controller.selectedCategory = HomeEndpoint.topRated.rawValue
+            controller.title = category.rawValue
         default:
-            controller.selectedCategory = "movie/upcoming"
+            controller.selectedCategory = HomeEndpoint.upcoming.rawValue
+            controller.title = category.rawValue
         }
         navigationController?.show(controller, sender: nil)
     }
@@ -78,5 +83,4 @@ extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
         print ("kinonun id'si\(index)" )
         navigationController?.show(controller, sender: nil)
     }
-    
 }

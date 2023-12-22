@@ -16,7 +16,7 @@ class SelectedCategoryViewModel {
     var error: ((String?) -> Void)?
     
     func getItems(selectedCategory: String) {
-        manager.getMovieList(endpoint: HomeEndpoint(rawValue: selectedCategory) ?? .nowPlaying) { data, errorMessage in
+        manager.getMovieList(endpoint:HomeEndpoint(rawValue: selectedCategory) ?? .nowPlaying) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
             } else if let data {

@@ -21,10 +21,6 @@ class SelectedCategoryController: UIViewController {
 //        print(selectedCategory)
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        print(selectedCategory)
-//    }
-    
     func configureViewModel() {
         viewModel.error = { error in
             print(error ?? "bosh")
@@ -32,7 +28,6 @@ class SelectedCategoryController: UIViewController {
         viewModel.success = {
             self.collection.reloadData()
         }
-        
         viewModel.getItems(selectedCategory: selectedCategory ?? "")
     }
 }
