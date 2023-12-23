@@ -11,35 +11,38 @@ class MovieInfoController: UIViewController {
     
     @IBOutlet weak var movieInfoCollection: UICollectionView!
     
-    let viewModel = MovieInfoViewModel()
+    var viewModel: MovieInfoViewModel?
     var selectedID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureXibs()
         configureViewModel()
+        title = "Movie ID: \(viewModel?.movieID ?? 0)"
     }
     
     func configureViewModel() {
-        viewModel.error = { errorMessage in
+        viewModel?.error = { errorMessage in
             print(errorMessage)
         }
-        viewModel.success = {
-            self.movieInfoCollection.reloadData()        }
-        viewModel.getMovieInfoItems(movieID: selectedID)
+        viewModel?.success = {
+            self.movieInfoCollection.reloadData()
+        }
+        viewModel?.getMovieInfoItems()
     }
 }
 
 extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.movieItems.count
+        viewModel?.movieItems.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = viewModel.movieItems[indexPath.item]
+        let item = viewModel?.movieItems[indexPath.item]
         
-        switch item.type {
+        switch item?.type {
             
         case .poster(let path):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTrailerCell", for: indexPath) as! MovieTrailerCell
@@ -70,12 +73,14 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             cell.cast = cast
             return cell
             
+        case .none:
+            return UICollectionViewCell()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let item = viewModel.movieItems[indexPath.item]
-        switch item.type {
+        let item = viewModel?.movieItems[indexPath.item]
+        switch item?.type {
         case .poster:
             return CGSize(width: collectionView.frame.width - 32, height: 240)
         case .title:
@@ -86,6 +91,8 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             return CGSize(width: collectionView.frame.width - 32, height: 144)
         case .cast:
             return CGSize(width: collectionView.frame.width - 32, height: 150)
+        case .none:
+            return CGSize()
         }
     }
 }

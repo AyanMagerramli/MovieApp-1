@@ -18,12 +18,14 @@ class HomePageController: UIViewController {
         configureViewModel()
         movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
         title = "Home"
+        
     }
     
     @IBAction func searchButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SearchController") as! SearchController
         navigationController?.show(controller, sender: nil)
     }
+    
     func configureViewModel() {
         viewModel.error = { errorMessage in
             print(errorMessage)
@@ -32,6 +34,12 @@ class HomePageController: UIViewController {
             self.movieCategoryCollection.reloadData()
         }
         viewModel.getItems()
+    }
+    
+    func showMovieInfo(movieID: Int) {
+        let coordinator = MovieInfoCoordinator(movieID: movieID,
+                                               navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
     }
     
 }
@@ -78,9 +86,7 @@ extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
     }
     
     func didSelectMovie(at index: Int) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        controller.selectedID = index
-        print ("kinonun id'si\(index)" )
-        navigationController?.show(controller, sender: nil)
+        print("test \(index)")
+        showMovieInfo(movieID: index)
     }
 }

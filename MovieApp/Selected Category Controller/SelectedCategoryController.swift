@@ -30,6 +30,12 @@ class SelectedCategoryController: UIViewController {
         }
         viewModel.getItems(selectedCategory: selectedCategory ?? "")
     }
+    
+    func showMovieInfo(movieID: Int) {
+        let coordinator = MovieInfoCoordinator(movieID: movieID,
+                                               navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
 }
 
 extension SelectedCategoryController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -45,9 +51,11 @@ extension SelectedCategoryController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        controller.selectedID = viewModel.movieItems[indexPath.item].id
-        navigationController?.show(controller, sender: nil)
+//        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
+//        controller.selectedID = viewModel.movieItems[indexPath.item].id
+//        navigationController?.show(controller, sender: nil)
+        print("testt")
+        showMovieInfo(movieID: viewModel.movieItems[indexPath.item].id ?? 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

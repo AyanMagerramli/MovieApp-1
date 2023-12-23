@@ -12,9 +12,15 @@ class MovieInfoViewModel {
     var movieItems = [MovieDetailModel]()
     var success: (() -> Void)?
     var error: ((String) -> Void)?
+    var movieID: Int?
     
     private let manager = MovieInfoManager()
-    func getMovieInfoItems(movieID: Int?) {
+    
+    init(movieID: Int?) {
+        self.movieID = movieID
+    }
+        
+    func getMovieInfoItems() {
         manager.getMovieInfo(endpoint: .movieInfo, movieID: movieID) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
@@ -26,9 +32,14 @@ class MovieInfoViewModel {
                                                                releaseDate: data.releaseDate, 
                                                                language: data.originalLanguage?.uppercased()))))
                 self.movieItems.append(.init(type: .description(data.overview)))
+                self.cast()
                 self.success?()
             }
         }
+        
+    }
+    
+    func cast() {
         manager.getCastInfo(movieID: movieID) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)
@@ -38,7 +49,6 @@ class MovieInfoViewModel {
             }
         }
     }
-    
 
 }
 
