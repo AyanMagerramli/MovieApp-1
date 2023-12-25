@@ -37,14 +37,10 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
-        
-        cell.movieTitleLabel.text = viewmodel.searchedMovies[indexPath.item].title
-        cell.movieImage.showImage(imageURL: viewmodel.searchedMovies[indexPath.item].backdropPath)
-        cell.movieRatingLabel.text = "⭐ \((viewmodel.searchedMovies[indexPath.item].voteAverage?.rounded() ?? 0)) / 10 IMDB"
-        cell.movieDescriptionLabel.text = viewmodel.searchedMovies[indexPath.item].overview
-        
+        cell.configureData(data: viewmodel.searchedMovies[indexPath.item])
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showMovieInfo(movieID: viewmodel.searchedMovies[indexPath.item].id ?? 0)
     }

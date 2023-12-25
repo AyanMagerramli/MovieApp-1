@@ -26,7 +26,7 @@ struct Dates: Codable {
 }
 
 // MARK: - Result
-struct MovieResult: Codable, TopImageBottomLabelProtocol {
+struct MovieResult: Codable, TopImageBottomLabelProtocol, MovieCellProtocol {
     
     let adult: Bool?
     let backdropPath: String?
@@ -42,12 +42,24 @@ struct MovieResult: Codable, TopImageBottomLabelProtocol {
     let voteCount: Int?
     
     var titleText: String {
-        title ?? ""
+        return title ?? ""
     }
     
     var imagePath: String {
-        backdropPath ?? ""
+        return backdropPath ?? ""
     }
+    var ratingText: String {
+        return "\(voteAverage ?? 0)"
+    }
+    
+    var descriptionText: String {
+        return overview ?? ""
+    }
+    
+    var movieImage: String {
+        return backdropPath ?? ""
+    }
+
 
     enum CodingKeys: String, CodingKey {
         case adult

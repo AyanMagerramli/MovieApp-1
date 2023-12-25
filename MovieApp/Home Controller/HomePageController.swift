@@ -33,10 +33,10 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = viewModel.movieItems[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCell", for: indexPath) as! HomeCell
         cell.delegate = self
         cell.seeAllDelegate = self
-        let item = viewModel.movieItems[indexPath.item]
         cell.configure(title: item.title, movies: item.movies)
         return cell
     }
@@ -103,9 +103,4 @@ extension HomePageController {
         let coordinator = SearchCoordinator(navigationController: navigationController ?? UINavigationController())
         coordinator.start()
     }
-    
-//    func showSelectedCategory(selectedCategory: String) {
-//        let coordinator = SelectedCategoryCoordinator(navigationController: navigationController ?? UINavigationController(), selectedCategory: selectedCategory)
-//    }
-    
 }

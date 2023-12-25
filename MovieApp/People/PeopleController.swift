@@ -19,7 +19,6 @@ class PeopleController: UIViewController {
         configureUI()
         configureViewModel()
     }
-
 }
 
 extension PeopleController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

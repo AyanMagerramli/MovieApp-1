@@ -12,7 +12,6 @@ class PeopleInfoController: UIViewController {
     @IBOutlet weak var peopleInfoCollection: UICollectionView!
     
     var viewModel: PeopleInfoViewModel?
-//    var selectedID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()

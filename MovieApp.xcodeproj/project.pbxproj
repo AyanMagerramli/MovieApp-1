@@ -338,10 +338,10 @@
 		90B478572B1DC2C700F4C21E /* Reusable Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9008465B2B21AC9D00100DD8 /* Home Cell */,
-				90E3B4F32B2B15120032BB06 /* Movie Info */,
-				90F27F952B24589D008DE613 /* SearchMovie Cell */,
 				90CF69732B21B7C000D594CD /* TopImageBottomLabelCell */,
+				9008465B2B21AC9D00100DD8 /* Home Cell */,
+				90F27F952B24589D008DE613 /* Movie Cell */,
+				90E3B4F32B2B15120032BB06 /* Movie Info */,
 			);
 			path = "Reusable Cells";
 			sourceTree = "<group>";
@@ -460,13 +460,13 @@
 			path = "Search Controller";
 			sourceTree = "<group>";
 		};
-		90F27F952B24589D008DE613 /* SearchMovie Cell */ = {
+		90F27F952B24589D008DE613 /* Movie Cell */ = {
 			isa = PBXGroup;
 			children = (
 				90F27F922B24588D008DE613 /* MovieCell.xib */,
 				90F27F912B24588D008DE613 /* MovieCell.swift */,
 			);
-			path = "SearchMovie Cell";
+			path = "Movie Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

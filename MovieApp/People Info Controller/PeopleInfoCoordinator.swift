@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class PeopleInfoCoordinator: Coordinator {
+    
     var navigationController: UINavigationController
     var peopleID: Int?
     

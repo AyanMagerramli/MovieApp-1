@@ -10,10 +10,9 @@ import Foundation
 class SearchViewModel {
     
     var searchedMovies = [MovieResult]()
-    private let manager = SearchManager()
-    
     var success: (() -> Void)?
     var error: ((String) -> Void)?
+    private let manager = SearchManager()
 
     func getSearch(movieKey: String) {
         manager.getSearchItems(endpoint: .search, movieKey: movieKey) { data, errorMessage in

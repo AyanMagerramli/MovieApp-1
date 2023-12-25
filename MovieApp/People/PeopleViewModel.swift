@@ -8,6 +8,7 @@
 import Foundation
 
 class PeopleViewModel {
+    
     var peopleData: People? //2
     var peopleItems = [PeopleResult]()
     private let manager = PeopleManager()

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum PeopleEndpoint: String {
     case popularPerson = "person/popular"
 }
