@@ -10,9 +10,14 @@ import UIKit
 class MovieDescriptionCell: UICollectionViewCell {
 
     @IBOutlet weak var movieDescriptionLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func config(description: String?) {
+        movieDescriptionLabel.text = description
     }
 
 }

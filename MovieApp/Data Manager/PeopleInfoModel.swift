@@ -12,7 +12,8 @@ struct PeopleInfoModel: Codable {
 }
 
 // MARK: - Cast
-struct PeopleCast: Codable {
+struct PeopleCast: Codable, TopImageBottomLabelProtocol {
+    
     let adult: Bool?
     let backdropPath: String?
     let genreIDS: [Int]?
@@ -28,6 +29,14 @@ struct PeopleCast: Codable {
     let character, creditID: String?
     let order: Int?
     let department, job: String?
+    
+    var titleText: String {
+        return title ?? ""
+    }
+    
+    var imagePath: String {
+        return posterPath ?? ""
+    }
 
     enum CodingKeys: String, CodingKey {
         case adult

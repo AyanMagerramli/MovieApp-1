@@ -21,16 +21,7 @@ class MovieInfoController: UIViewController {
         configureViewModel()
         title = "Movie ID: \(viewModel?.movieID ?? 0)"
     }
-    
-    func configureViewModel() {
-        viewModel?.error = { errorMessage in
-            print(errorMessage)
-        }
-        viewModel?.success = {
-            self.movieInfoCollection.reloadData()
-        }
-        viewModel?.getMovieInfoItems()
-    }
+
 }
 
 extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -51,21 +42,17 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             
         case .title(let title):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieNameCell", for: indexPath) as! MovieNameCell
-            cell.movieTitleLabel.text = title
+            cell.configData(title: title)
             return cell
             
         case .info(let info):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDetailsCell", for: indexPath) as! MovieDetailsCell
-            cell.movieLength.text = "\(info.length  ?? "0")min"
-            cell.movieReleaseDate.text = info.releaseDate
-            cell.movieLanguage.text = info.language
-            cell.movieRatingLabel.text = "⭐ \(info.rating ?? "0") / 10 IMDb "
-            cell.genres = info.genres
+            cell.configureCell(data: info, genre: info.genres)
             return cell
             
         case .description(let description):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieDescriptionCell", for: indexPath) as! MovieDescriptionCell
-            cell.movieDescriptionLabel.text = description
+            cell.config(description: description)
             return cell
             
         case .cast(let cast):
@@ -99,11 +86,22 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
 
 // MARK: Functions
 extension MovieInfoController {
+    
     func configureXibs() {
         movieInfoCollection.register(UINib(nibName: "MovieTrailerCell", bundle: nil), forCellWithReuseIdentifier: "MovieTrailerCell")
         movieInfoCollection.register(UINib(nibName: "MovieNameCell", bundle: nil), forCellWithReuseIdentifier: "MovieNameCell")
         movieInfoCollection.register(UINib(nibName: "MovieDetailsCell", bundle: nil), forCellWithReuseIdentifier: "MovieDetailsCell")
         movieInfoCollection.register(UINib(nibName: "MovieDescriptionCell", bundle: nil), forCellWithReuseIdentifier: "MovieDescriptionCell")
         movieInfoCollection.register(UINib(nibName: "MovieCastCell", bundle: nil), forCellWithReuseIdentifier: "MovieCastCell")
+    }
+    
+    func configureViewModel() {
+        viewModel?.error = { errorMessage in
+            print(errorMessage)
+        }
+        viewModel?.success = {
+            self.movieInfoCollection.reloadData()
+        }
+        viewModel?.getMovieInfoItems()
     }
 }

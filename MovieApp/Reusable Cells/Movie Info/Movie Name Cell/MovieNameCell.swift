@@ -15,7 +15,12 @@ class MovieNameCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
     @IBAction func seemoreActionButton(_ sender: Any) {
+    }
+    
+    func configData(title: String?) {
+        movieTitleLabel.text = title
     }
     
 }

@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol MovieDetailsCellProtocol {
+    var ratingText: String {get}
+    var lengthText: String {get}
+    var releaseDateText: String {get}
+    var languageText: String {get}
+}
+
 class MovieDetailsCell: UICollectionViewCell {
 
     @IBOutlet weak var movieRatingLabel: UILabel!
     @IBOutlet weak var movieLength: UILabel!
     @IBOutlet weak var movieReleaseDate: UILabel!
     @IBOutlet weak var movieLanguage: UILabel!
-    
     @IBOutlet weak var genreCollection: UICollectionView!
     
     var genres: [Genre]?
@@ -21,6 +27,14 @@ class MovieDetailsCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         genreCollection.register(UINib(nibName: "GenresCell", bundle: nil), forCellWithReuseIdentifier: "GenresCell")
+    }
+    
+    func configureCell(data: MovieDetailsCellProtocol, genre: [Genre]) {
+        movieRatingLabel.text = "⭐ \(data.ratingText) / 10 IMDb  "
+        movieLength.text = "\(data.lengthText)min"
+        movieReleaseDate.text = data.releaseDateText
+        movieLanguage.text = data.languageText
+        genres = genre
     }
 }
 

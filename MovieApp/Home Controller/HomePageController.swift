@@ -16,9 +16,7 @@ class HomePageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
-        movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
-        title = "Home"
-        
+        configureUI()
     }
     
     @IBAction func searchButton(_ sender: Any) {
@@ -26,24 +24,9 @@ class HomePageController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     
-    func configureViewModel() {
-        viewModel.error = { errorMessage in
-            print(errorMessage)
-        }
-        viewModel.success = {
-            self.movieCategoryCollection.reloadData()
-        }
-        viewModel.getItems()
-    }
-    
-    func showMovieInfo(movieID: Int) {
-        let coordinator = MovieInfoCoordinator(movieID: movieID,
-                                               navigationController: navigationController ?? UINavigationController())
-        coordinator.start()
-    }
-    
 }
 
+//MARK: Collections
 extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,6 +47,7 @@ extension HomePageController: UICollectionViewDelegate,UICollectionViewDataSourc
     }
 }
 
+//MARK: Delegates
 extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
     func seeAllDelegate(at category: HomeCategory) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "SelectedCategoryController") as! SelectedCategoryController
@@ -89,4 +73,31 @@ extension HomePageController: MovieSelectCellDelegate, DidButtonTappedDelegate {
         print("test \(index)")
         showMovieInfo(movieID: index)
     }
+}
+
+
+//MARK: Functions
+extension HomePageController {
+    
+    func configureViewModel() {
+        viewModel.error = { errorMessage in
+            print(errorMessage)
+        }
+        viewModel.success = {
+            self.movieCategoryCollection.reloadData()
+        }
+        viewModel.getItems()
+    }
+    
+    func showMovieInfo(movieID: Int) {
+        let coordinator = MovieInfoCoordinator(movieID: movieID,
+                                               navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
+    
+    func configureUI() {
+        movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
+        title = "Home"
+    }
+    
 }

@@ -21,6 +21,7 @@ class TopImageBottomLabelCell: UICollectionViewCell {
         super.awakeFromNib()
         movieImage.layer.cornerRadius = 16
     }
+    
     func configure(data: TopImageBottomLabelProtocol) {
         movieTitleLabel.text = data.titleText
         movieImage.showImage(imageURL: data.imagePath)

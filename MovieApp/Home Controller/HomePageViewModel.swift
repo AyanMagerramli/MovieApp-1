@@ -12,7 +12,7 @@ class HomePageViewModel {
     
     var movieItems = [MovieCategoryModel]()
     private let manager = HomeManager()
-
+    
     var success: (() -> Void)?
     var error: ((String) -> Void)?
     

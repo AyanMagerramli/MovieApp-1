@@ -13,7 +13,7 @@ class PeopleInfoController: UIViewController {
     
     let viewModel = PeopleInfoViewModel()
     var selectedID = 0
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureXib()
@@ -30,8 +30,7 @@ extension PeopleInfoController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = viewModel.peopleInfoItems[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
-        cell.movieTitleLabel.text = item.title
-        cell.movieImage.showImage(imageURL: item.backdropPath)
+        cell.configure(data: item)
 
         return cell
     }
@@ -55,7 +54,6 @@ extension PeopleInfoController {
         }
         viewModel.sucess = {
             self.peopleInfoCollection.reloadData()
-//            print(self.viewModel.peopleInfoItems)
         }
         viewModel.getPeopleInfoItems(peopleID: selectedID)
     }

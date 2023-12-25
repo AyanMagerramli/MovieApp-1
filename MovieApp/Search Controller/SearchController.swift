@@ -10,13 +10,12 @@ import UIKit
 class SearchController: UIViewController {
     
     @IBOutlet weak var movieCollection: UICollectionView!
-    var searching = false
-    
+   
     let viewmodel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        movieCollection.register(UINib(nibName: "MovieCell", bundle: nil), forCellWithReuseIdentifier: "MovieCell")
+        configureUI()
     }
     
     @IBAction func searchTextField(_ sender: UITextField) {
@@ -29,7 +28,7 @@ class SearchController: UIViewController {
         }
     }
 }
-
+//MARK: Collection Functions
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,6 +37,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: indexPath) as! MovieCell
+        
         cell.movieTitleLabel.text = viewmodel.searchedMovies[indexPath.item].title
         cell.movieImage.showImage(imageURL: viewmodel.searchedMovies[indexPath.item].backdropPath)
         cell.movieRatingLabel.text = "⭐ \((viewmodel.searchedMovies[indexPath.item].voteAverage?.rounded() ?? 0)) / 10 IMDB"
@@ -46,9 +46,20 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        controller.selectedID = viewmodel.searchedMovies[indexPath.item].id
-        print(indexPath.item)
-        navigationController?.show(controller, sender: nil)
+        showMovieInfo(movieID: viewmodel.searchedMovies[indexPath.item].id ?? 0)
     }
+}
+
+
+//MARK: Functions
+extension SearchController {
+    func configureUI() {
+        movieCollection.register(UINib(nibName: "MovieCell", bundle: nil), forCellWithReuseIdentifier: "MovieCell")
+    }
+    
+    func showMovieInfo(movieID: Int) {
+        let coordinator = MovieInfoCoordinator(movieID: movieID, navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
+    
 }
