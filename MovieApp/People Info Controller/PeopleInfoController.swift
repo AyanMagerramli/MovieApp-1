@@ -11,8 +11,8 @@ class PeopleInfoController: UIViewController {
     
     @IBOutlet weak var peopleInfoCollection: UICollectionView!
     
-    let viewModel = PeopleInfoViewModel()
-    var selectedID = 0
+    var viewModel: PeopleInfoViewModel?
+//    var selectedID = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +24,18 @@ class PeopleInfoController: UIViewController {
 
 extension PeopleInfoController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.peopleInfoItems.count
+        viewModel?.peopleInfoItems.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item = viewModel.peopleInfoItems[indexPath.item]
+        let item = viewModel?.peopleInfoItems[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
-        cell.configure(data: item)
+        cell.configure(data: item!)
 
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        controller.selectedID = viewModel.peopleInfoItems[indexPath.item].id
-        navigationController?.show(controller, sender: nil)
+        showMovieInfo(movieID: viewModel?.peopleInfoItems[indexPath.item].id ?? 0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width/2-10, height: 280)
@@ -49,16 +47,21 @@ extension PeopleInfoController: UICollectionViewDelegate, UICollectionViewDataSo
 extension PeopleInfoController {
     
     func configureViewModel() {
-        viewModel.error = { error in
+        viewModel?.error = { error in
             print(error)
         }
-        viewModel.sucess = {
+        viewModel?.sucess = {
             self.peopleInfoCollection.reloadData()
         }
-        viewModel.getPeopleInfoItems(peopleID: selectedID)
+        viewModel?.getPeopleInfoItems()
     }
     
     func configureXib() {
         peopleInfoCollection.register(UINib(nibName: "TopImageBottomLabelCell", bundle: nil),forCellWithReuseIdentifier: "TopImageBottomLabelCell")
+    }
+    
+    func showMovieInfo(movieID: Int) {
+        let coordinator = MovieInfoCoordinator(movieID: movieID, navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
     }
 }

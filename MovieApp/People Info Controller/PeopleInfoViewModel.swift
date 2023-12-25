@@ -12,10 +12,15 @@ class PeopleInfoViewModel {
     
     var sucess: (() -> Void)?
     var error: ((String) -> Void)?
+    var peopleID: Int?
     
+    
+    init(peopleID: Int? = nil) {
+        self.peopleID = peopleID
+    }
     private let manager = PeopleInfoManager()
     
-    func getPeopleInfoItems(peopleID: Int) {
+    func getPeopleInfoItems() {
         manager.getPeopleInfo(peopleID: peopleID) { data, errorMessage in
             if let errorMessage {
                 self.error?(errorMessage)

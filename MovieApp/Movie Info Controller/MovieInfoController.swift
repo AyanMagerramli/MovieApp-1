@@ -10,16 +10,12 @@ import UIKit
 class MovieInfoController: UIViewController {
     
     @IBOutlet weak var movieInfoCollection: UICollectionView!
-    
     var viewModel: MovieInfoViewModel?
-    var selectedID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureXibs()
         configureViewModel()
-        title = "Movie ID: \(viewModel?.movieID ?? 0)"
     }
 
 }
@@ -37,7 +33,7 @@ extension MovieInfoController: UICollectionViewDelegate, UICollectionViewDataSou
             
         case .poster(let path):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieTrailerCell", for: indexPath) as! MovieTrailerCell
-                cell.movieImage.showImage(imageURL: path)
+            cell.showImage(image: path)
             return cell
             
         case .title(let title):

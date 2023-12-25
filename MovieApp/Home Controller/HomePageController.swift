@@ -20,8 +20,7 @@ class HomePageController: UIViewController {
     }
     
     @IBAction func searchButton(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "SearchController") as! SearchController
-        navigationController?.show(controller, sender: nil)
+        showSearchController()
     }
     
 }
@@ -99,5 +98,14 @@ extension HomePageController {
         movieCategoryCollection.register(UINib(nibName: "HomeCell", bundle: nil),forCellWithReuseIdentifier: "HomeCell")
         title = "Home"
     }
+    
+    func showSearchController() {
+        let coordinator = SearchCoordinator(navigationController: navigationController ?? UINavigationController())
+        coordinator.start()
+    }
+    
+//    func showSelectedCategory(selectedCategory: String) {
+//        let coordinator = SelectedCategoryCoordinator(navigationController: navigationController ?? UINavigationController(), selectedCategory: selectedCategory)
+//    }
     
 }

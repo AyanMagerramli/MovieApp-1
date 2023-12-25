@@ -14,5 +14,9 @@ class MovieTrailerCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func showImage(image: String?) {
+        movieImage.showImage(imageURL: image)
+    }
 
 }

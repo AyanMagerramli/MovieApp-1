@@ -29,16 +29,11 @@ extension SelectedCategoryController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TopImageBottomLabelCell", for: indexPath) as! TopImageBottomLabelCell
-        cell.movieImage.showImage(imageURL: viewModel.movieItems[indexPath.item].backdropPath)
-        cell.movieTitleLabel.text = viewModel.movieItems[indexPath.item].title
+        cell.configure(data: viewModel.movieItems[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //        let controller = storyboard?.instantiateViewController(withIdentifier: "MovieInfoController") as! MovieInfoController
-        //        controller.selectedID = viewModel.movieItems[indexPath.item].id
-        //        navigationController?.show(controller, sender: nil)
-//        print("testt")
         showMovieInfo(movieID: viewModel.movieItems[indexPath.item].id ?? 0)
     }
     
