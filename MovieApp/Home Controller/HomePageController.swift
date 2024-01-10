@@ -11,6 +11,8 @@ class HomePageController: UIViewController {
     
     @IBOutlet weak var movieCategoryCollection: UICollectionView!
     
+  //  @IBOutlet weak var movieCategoryCollection: UICollectionView!
+    
     let viewModel = HomePageViewModel()
     
     override func viewDidLoad() {
