@@ -37,6 +37,10 @@ extension SelectedCategoryController: UICollectionViewDelegate, UICollectionView
         showMovieInfo(movieID: viewModel.movieItems[indexPath.item].id ?? 0)
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        showMovieInfo(movieID: viewModel.movieItems[indexPath.item].id ?? 0)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width/2-10, height: 280)
     }
